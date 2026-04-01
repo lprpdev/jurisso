@@ -74,11 +74,10 @@
   font-weight: 600;
   text-decoration: none;
   border-radius: var(--radius-md);
-  transition: box-shadow 0.15s;
-}
+  transition: none;}
 
 .navCta:hover {
-  box-shadow: var(--shadow-primary);
+
 }
 
 /* ── Hero ── */
@@ -254,12 +253,11 @@
   font-weight: 700;
   text-decoration: none;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  transition: box-shadow 0.15s;
-}
+
+  transition: none;}
 
 .ctaButton:hover {
-  box-shadow: var(--shadow-lg);
+
 }
 
 @media (max-width: 768px) {

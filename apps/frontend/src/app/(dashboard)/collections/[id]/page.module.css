@@ -63,7 +63,7 @@
   color: var(--color-on-primary, #ffffff);
   border: none;
   border-radius: var(--radius-full, 9999px);
-  box-shadow: var(--shadow-primary);
+
   transition: opacity 0.15s ease;
 }
 
@@ -74,7 +74,7 @@
 .actionBtnSecondary {
   background-color: var(--color-surface-container-high, #ece8e0);
   color: var(--color-on-surface, #1d1c17);
-  box-shadow: none;
+
 }
 
 .actionBtnSecondary:hover {
@@ -112,13 +112,12 @@
   text-decoration: none;
   color: var(--color-on-surface, #1d1c17);
   border-radius: var(--radius-lg, 2rem);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  transition: transform 0.2s ease;
 }
 
 .docCard:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+
 }
 
 .docType {

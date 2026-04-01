@@ -14,14 +14,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 256px;
+  width: 280px;
   height: 100dvh;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   display: flex;
   flex-direction: column;
-  padding: var(--space-8) var(--space-4);
+  padding: var(--space-8) var(--space-5);
   z-index: var(--z-sticky);
   overflow-y: auto;
 }
@@ -44,7 +44,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: var(--shadow-md);
+
 }
 
 .logoText {
@@ -83,7 +83,7 @@
   font-weight: 700;
   text-decoration: none;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-primary);
+
   transition: transform var(--transition-fast);
 }
 
@@ -91,28 +91,15 @@
   transform: scale(0.98);
 }
 
-/* ----- Sidebar Nav (shared with SidebarNav component) ----- */
+/* ----- Sidebar Nav — Pill Style ----- */
 .navGroup {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-  padding: 0 var(--space-3);
 }
 
 .navDivider {
-  position: relative;
-  height: var(--space-6);
-}
-
-.navDivider::after {
-  content: '';
-  position: absolute;
-  left: var(--space-5);
-  right: var(--space-5);
-  top: 50%;
-  height: 1px;
-  background-color: var(--color-outline-variant);
-  opacity: 0.2;
+  height: var(--space-5);
 }
 
 .navLink {
@@ -123,33 +110,31 @@
   font-size: var(--text-sm);
   color: var(--color-on-surface-variant);
   text-decoration: none;
-  font-weight: 400;
-  transition: color var(--transition-fast), background-color var(--transition-fast);
-  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-radius: var(--radius-full);
 }
 
 .navLink:hover {
   color: var(--color-primary);
-  background-color: var(--color-surface-container);
+  background-color: var(--color-surface-container-high);
+}
+
+.navLink:active {
+  transform: scale(0.97);
 }
 
 .navLinkActive {
-  color: var(--color-primary);
+  color: var(--color-on-primary);
   font-weight: 700;
-  background-color: var(--color-surface-container-lowest);
-  box-shadow: var(--shadow-sm);
-  position: relative;
+  background-color: var(--color-primary);
+
 }
 
-.navLinkActive::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 25%;
-  bottom: 25%;
-  width: 3px;
+.navLinkActive:hover {
+  color: var(--color-on-primary);
   background-color: var(--color-primary);
-  border-radius: var(--radius-full);
+  opacity: 0.9;
 }
 
 .navIcon {
@@ -161,11 +146,12 @@
 
 .navLinkActive .navIcon {
   opacity: 1;
+  color: var(--color-on-primary);
 }
 
 /* ----- Main Area ----- */
 .mainArea {
-  margin-left: 256px;
+  margin-left: 280px;
   flex: 1;
   min-height: 100dvh;
   display: flex;
@@ -197,7 +183,7 @@
   -webkit-backdrop-filter: blur(12px);
   padding: 6px;
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .pillTab {
@@ -254,7 +240,7 @@
   color: var(--color-on-surface);
   border: none;
   border-radius: var(--radius-full);
-  transition: box-shadow var(--transition-fast);
+  
 }
 
 .searchInput::placeholder {
@@ -263,7 +249,7 @@
 
 .searchInput:focus {
   outline: none;
-  box-shadow: 0 0 0 2px rgba(62, 94, 149, 0.4);
+
 }
 
 .headerRight {
@@ -302,7 +288,7 @@
   border-radius: var(--radius-md);
   padding: var(--space-4);
   margin-bottom: var(--space-4);
-  box-shadow: var(--shadow-primary);
+
 }
 
 .planCardHeader {
@@ -392,7 +378,7 @@
   font-weight: 700;
   cursor: pointer;
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-sm);
+
   transition: transform var(--transition-fast);
 }
 
@@ -414,7 +400,7 @@
   z-index: 200;
   padding: var(--space-2) 0;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+
 }
 
 .userDropdownHeader {

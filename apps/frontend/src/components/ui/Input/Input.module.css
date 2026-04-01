@@ -27,7 +27,7 @@
   border: none;
   border-radius: var(--radius-sm);
   outline: none;
-  transition: box-shadow var(--transition-fast);
+  
 }
 
 .input::placeholder {
@@ -35,7 +35,7 @@
 }
 
 .input:focus {
-  box-shadow: 0 0 0 2px rgba(var(--color-surface-tint-rgb, 0, 25, 60), 0.4);
+
 }
 
 .input:disabled {
@@ -45,11 +45,11 @@
 }
 
 .hasError .input {
-  box-shadow: 0 0 0 2px var(--color-error);
+
 }
 
 .hasError .input:focus {
-  box-shadow: 0 0 0 2px var(--color-error);
+
 }
 
 .hint {

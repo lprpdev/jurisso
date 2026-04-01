@@ -13,7 +13,7 @@
   background-color: var(--color-surface-container-lowest, #ffffff);
   padding: var(--space-8);
   border-radius: var(--radius-lg, 2rem);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .badges {
@@ -159,7 +159,7 @@
   background-color: var(--color-surface-container-lowest, #ffffff);
   padding: var(--space-5);
   border-radius: var(--radius-lg, 2rem);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .sidePanelTitle {

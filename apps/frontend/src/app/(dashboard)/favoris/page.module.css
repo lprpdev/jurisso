@@ -33,7 +33,7 @@
   color: var(--color-on-surface, #1d1c17);
   border: none;
   border-radius: var(--radius-full, 9999px);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .searchInput::placeholder {
@@ -54,7 +54,7 @@
   color: var(--color-on-surface, #1d1c17);
   border: none;
   border-radius: var(--radius-md, 1rem);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .grid {
@@ -71,13 +71,12 @@
   align-items: flex-start;
   gap: var(--space-4);
   border-radius: var(--radius-lg, 2rem);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  transition: transform 0.2s ease;
 }
 
 .favCard:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+
 }
 
 .favContent {

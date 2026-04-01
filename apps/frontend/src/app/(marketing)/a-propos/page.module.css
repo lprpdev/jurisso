@@ -93,7 +93,7 @@
   padding: 2rem;
   background-color: var(--color-surface-container-lowest);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+
   text-align: center;
 }
 
@@ -139,7 +139,7 @@
   padding: 2rem 1rem;
   background-color: var(--color-surface-container-lowest);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .teamAvatar {

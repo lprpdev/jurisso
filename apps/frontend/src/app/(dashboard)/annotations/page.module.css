@@ -25,12 +25,11 @@
   padding: var(--space-5);
   position: relative;
   border-radius: var(--radius-lg, 2rem);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s ease;
-}
+
+  transition: none;}
 
 .annotationCard:hover {
-  box-shadow: var(--shadow-md);
+
 }
 
 .annotationHeader {

@@ -32,7 +32,7 @@
   color: var(--color-on-surface, #1d1c17);
   border: none;
   border-radius: var(--radius-full, 9999px);
-  box-shadow: var(--shadow-md);
+
 }
 
 .searchInput::placeholder {
@@ -58,7 +58,7 @@
   position: sticky;
   top: calc(64px + var(--space-6));
   border-radius: var(--radius-lg, 2rem);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .filterTitle {
@@ -131,7 +131,7 @@
   background-color: var(--color-surface-container-lowest, #ffffff);
   border: none;
   border-radius: var(--radius-md, 1rem);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .resultsList {
@@ -148,13 +148,12 @@
   text-decoration: none;
   color: var(--color-on-surface, #1d1c17);
   border-radius: var(--radius-lg, 2rem);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+  transition: transform 0.2s ease;
 }
 
 .resultCard:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+
 }
 
 .resultType {

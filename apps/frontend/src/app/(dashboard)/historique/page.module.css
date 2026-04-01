@@ -46,12 +46,11 @@
   align-items: center;
   gap: var(--space-4);
   border-radius: var(--radius-lg, 2rem);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s ease;
-}
+
+  transition: none;}
 
 .historyItem:hover {
-  box-shadow: var(--shadow-md);
+
 }
 
 .historyContent {

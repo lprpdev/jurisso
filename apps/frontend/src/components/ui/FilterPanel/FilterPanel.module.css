@@ -7,7 +7,7 @@
   padding: var(--space-5) var(--space-6);
   background-color: var(--color-surface-container-lowest);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .section {
@@ -69,11 +69,11 @@
   border-radius: var(--radius-sm);
   outline: none;
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
-  transition: box-shadow var(--transition-fast);
+  
 }
 
 .dateInput:focus {
-  box-shadow: 0 0 0 2px rgba(var(--color-surface-tint-rgb, 0, 25, 60), 0.4);
+
 }
 
 .dateSep {

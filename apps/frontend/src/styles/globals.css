@@ -94,11 +94,11 @@
   --radius-xl: 3rem;
   --radius-full: 9999px;
 
-  /* Ambient shadows — tinted, never pure black */
-  --shadow-sm: 0px 4px 12px rgba(29, 28, 23, 0.04);
-  --shadow-md: 0px 12px 24px rgba(29, 28, 23, 0.05);
-  --shadow-lg: 0px 24px 48px rgba(29, 28, 23, 0.06);
-  --shadow-primary: 0px 12px 32px rgba(0, 25, 60, 0.2);
+
+
+
+
+
 
   /* Transitions */
   --transition-fast: 150ms ease;

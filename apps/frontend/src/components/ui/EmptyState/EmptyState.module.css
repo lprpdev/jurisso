@@ -39,14 +39,13 @@
   background-color: var(--color-primary);
   color: var(--color-on-primary);
   text-decoration: none;
-  transition: background-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
   border-radius: var(--radius-md);
   border: none;
 }
 
 .action:hover {
-  box-shadow: var(--shadow-primary);
-  transform: translateY(-1px);
+
 }
 
 .action:focus-visible {

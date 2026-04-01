@@ -14,7 +14,7 @@
   min-width: 180px;
   background-color: var(--color-surface-container-lowest);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+
   z-index: var(--z-dropdown);
   animation: slideDown 150ms ease;
   padding: var(--space-1) 0;

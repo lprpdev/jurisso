@@ -23,7 +23,7 @@
   background-color: var(--color-surface-container-lowest, #ffffff);
   padding: var(--space-6);
   border-radius: var(--radius-lg, 2rem);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .sectionTitle {
@@ -92,7 +92,7 @@
   color: var(--color-on-primary, #ffffff);
   border: none;
   border-radius: var(--radius-full, 9999px);
-  box-shadow: var(--shadow-primary);
+
   align-self: flex-start;
   transition: opacity 0.15s ease;
 }
@@ -105,7 +105,7 @@
   background-color: var(--color-surface-container-high, #ece8e0);
   color: var(--color-on-surface-variant, #43474f);
   cursor: not-allowed;
-  box-shadow: none;
+
 }
 
 .successMessage {

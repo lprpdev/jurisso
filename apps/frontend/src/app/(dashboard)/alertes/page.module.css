@@ -29,7 +29,7 @@
   color: var(--color-on-primary, #ffffff);
   border: none;
   border-radius: var(--radius-full, 9999px);
-  box-shadow: var(--shadow-primary);
+
   transition: opacity 0.15s ease;
 }
 
@@ -50,12 +50,11 @@
   align-items: center;
   gap: var(--space-4);
   border-radius: var(--radius-lg, 2rem);
-  box-shadow: var(--shadow-sm);
-  transition: box-shadow 0.2s ease;
-}
+
+  transition: none;}
 
 .alertCard:hover {
-  box-shadow: var(--shadow-md);
+
 }
 
 .alertInfo {
@@ -141,7 +140,7 @@
   background-color: var(--color-surface-container-lowest, #ffffff);
   border-radius: var(--radius-full, 9999px);
   transition: transform 0.15s ease;
-  box-shadow: var(--shadow-sm);
+
 }
 
 .actionLink {

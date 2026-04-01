@@ -108,11 +108,10 @@
   cursor: pointer;
   border-radius: var(--radius-md);
   border: none;
-  transition: box-shadow 0.15s;
-}
+  transition: none;}
 
 .submit:hover {
-  box-shadow: var(--shadow-primary);
+
 }
 
 /* Side panel */

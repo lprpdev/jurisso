@@ -1,18 +1,17 @@
 .card {
   background-color: var(--color-surface-container-lowest);
   padding: var(--space-5) var(--space-6);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition: transform var(--transition-fast);
   position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+
 }
 
 .topRow {

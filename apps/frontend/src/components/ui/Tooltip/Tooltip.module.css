@@ -17,7 +17,7 @@
   opacity: 0;
   transition: opacity var(--transition-fast);
   border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .wrapper:hover .tooltip,

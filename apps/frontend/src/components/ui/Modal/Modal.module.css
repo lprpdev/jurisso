@@ -20,7 +20,7 @@
   animation: slideUp 200ms ease;
   position: relative;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+
 }
 
 .header {

@@ -31,12 +31,12 @@
   appearance: none;
   cursor: pointer;
   outline: none;
-  transition: box-shadow var(--transition-fast);
+  
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
 }
 
 .select:focus {
-  box-shadow: 0 0 0 2px rgba(var(--color-surface-tint-rgb, 0, 25, 60), 0.4);
+
 }
 
 .select:disabled {
@@ -45,7 +45,7 @@
 }
 
 .hasError .select {
-  box-shadow: 0 0 0 2px var(--color-error);
+
 }
 
 .chevron {

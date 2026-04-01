@@ -18,7 +18,7 @@
   max-width: 420px;
   background-color: var(--color-surface-container-lowest);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+
   animation: slideInRight 250ms ease forwards;
   pointer-events: auto;
   position: relative;

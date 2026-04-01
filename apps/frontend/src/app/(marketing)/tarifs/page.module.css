@@ -231,7 +231,7 @@
 }
 
 .planCtaAccent:hover {
-  box-shadow: var(--shadow-primary);
+
 }
 
 /* ── Comparison Table ── */
@@ -337,7 +337,7 @@
   padding: 1.5rem;
   background-color: var(--color-surface-container-lowest);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+
 }
 
 .faqQuestion {

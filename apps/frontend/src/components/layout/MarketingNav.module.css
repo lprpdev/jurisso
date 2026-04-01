@@ -68,13 +68,12 @@
   background-color: var(--color-on-primary);
   padding: var(--space-2) var(--space-4);
   text-decoration: none;
-  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  transition:, transform var(--transition-fast);
   border-radius: var(--radius-md);
 }
 
 .cta:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+
 }
 
 /* User dropdown */
@@ -141,7 +140,7 @@
   z-index: var(--z-dropdown, 200);
   padding: var(--space-2) 0;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+
 }
 
 .dropdownHeader {
