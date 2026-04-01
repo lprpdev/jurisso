@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { auth } from '@/lib/auth';
 import { SidebarNav } from './SidebarNav';
 import DashboardUserMenu from './DashboardUserMenu';
+import DashboardPillTabs from './DashboardPillTabs';
 import styles from './layout.module.css';
 
 export default async function DashboardLayout({
@@ -61,6 +62,10 @@ export default async function DashboardLayout({
         {/* Floating Header */}
         <header className={styles.header}>
           <div className={styles.headerLeft}>
+            <DashboardPillTabs />
+          </div>
+
+          <div className={styles.headerRight}>
             <form action="/recherche" method="get" className={styles.searchForm}>
               <div className={styles.searchInputWrapper}>
                 <svg
@@ -76,14 +81,11 @@ export default async function DashboardLayout({
                   type="search"
                   name="q"
                   className={styles.searchInput}
-                  placeholder="Rechercher dans les archives\u2026"
+                  placeholder="Rechercher\u2026"
                   autoComplete="off"
                 />
               </div>
             </form>
-          </div>
-
-          <div className={styles.headerRight}>
             <button
               type="button"
               className={styles.notificationBtn}

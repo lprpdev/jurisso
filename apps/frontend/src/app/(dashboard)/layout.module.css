@@ -188,12 +188,49 @@
 }
 
 .headerLeft {
-  flex: 1;
-  max-width: 400px;
+  flex-shrink: 0;
+}
+
+/* ----- Pill Tabs ----- */
+.pillTabs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  background-color: rgba(236, 232, 224, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+}
+
+.pillTab {
+  padding: var(--space-2) var(--space-6);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-on-surface-variant);
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.pillTab:hover {
+  color: var(--color-primary);
+}
+
+.pillTabActive {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+}
+
+.pillTabActive:hover {
+  color: var(--color-on-primary);
 }
 
 .searchForm {
-  width: 100%;
+  width: 256px;
 }
 
 .searchInputWrapper {
