@@ -1,0 +1,39 @@
+/* ============================================================
+   Email Verified Success Page
+   ============================================================ */
+
+.container {
+  text-align: center;
+  padding: var(--space-8) 0;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-6);
+  color: var(--color-success);
+}
+
+.heading {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: var(--space-3);
+}
+
+.description {
+  font-size: var(--text-base);
+  color: var(--color-muted);
+  line-height: var(--leading-relaxed);
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.redirectNote {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  margin-top: var(--space-6);
+  font-style: italic;
+}

@@ -1,0 +1,89 @@
+/* ───────────────────────────────────────────
+   Legal Layout — layout.module.css
+   ─────────────────────────────────────────── */
+
+.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-ink); }
+.navLogo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 900; color: #fff; text-decoration: none; }
+.navLinks { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+.navLink { font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 500; color: var(--color-surface-2); text-decoration: none; }
+.navRight { display: flex; align-items: center; gap: 1.5rem; }
+.navLogin { font-family: var(--font-dm-sans); font-size: 0.875rem; color: var(--color-surface-2); text-decoration: none; }
+.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-accent); color: #fff; font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 600; text-decoration: none; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 14rem 1fr;
+  gap: 3rem;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 3rem clamp(1.5rem,4vw,4rem) 6rem;
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 6rem;
+  align-self: start;
+}
+
+.sidebarTitle {
+  font-family: var(--font-dm-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin: 0 0 1rem;
+}
+
+.sidebarList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebarLink {
+  display: block;
+  font-family: var(--font-dm-sans);
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  position: relative;
+  transition: color 0.15s;
+}
+
+.sidebarLink:hover {
+  color: var(--color-ink);
+}
+
+.sidebarLink::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--color-surface);
+}
+
+.content {
+  min-width: 0;
+}
+
+/* Footer */
+.footer { padding: 4rem clamp(1.5rem,4vw,4rem) 2rem; background-color: var(--color-ink); }
+.footerGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 64rem; margin: 0 auto 3rem; }
+.footerHeading { font-family: var(--font-dm-sans); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-surface-2); margin: 0 0 1rem; }
+.footerLinks { list-style: none; margin: 0; padding: 0; }
+.footerLink { display: block; font-family: var(--font-dm-sans); font-size: 0.875rem; color: var(--color-muted); text-decoration: none; padding: 0.25rem 0; }
+.footerBottom { text-align: center; position: relative; padding-top: 2rem; }
+.footerBottom::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background-color: rgba(255,255,255,0.08); }
+.footerCopy { font-family: var(--font-dm-sans); font-size: 0.75rem; color: var(--color-muted); margin: 0; }
+
+@media (max-width: 768px) {
+  .navLinks { display: none; }
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .footerGrid { grid-template-columns: repeat(2, 1fr); }
+}

@@ -1,0 +1,61 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.label {
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.selectWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  width: 100%;
+  padding: var(--space-2) var(--space-8) var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--color-ink);
+  background-color: var(--color-white);
+  outline: 1px solid var(--color-surface-2);
+  appearance: none;
+  cursor: pointer;
+  transition: outline-color var(--transition-fast);
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+}
+
+.select:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+.select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.hasError .select {
+  outline: 2px solid var(--color-error);
+}
+
+.chevron {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-muted);
+}
+
+.error {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+}

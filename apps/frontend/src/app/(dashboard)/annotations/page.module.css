@@ -1,0 +1,121 @@
+/* ============================================================
+   Annotations Page
+   ============================================================ */
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-size: var(--text-3xl);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.annotationCard {
+  background-color: var(--color-white);
+  padding: var(--space-5);
+  position: relative;
+}
+
+.annotationHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.colorDot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  clip-path: circle(50%);
+}
+
+.docLink {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.docLink:hover {
+  color: var(--color-accent);
+}
+
+.excerpt {
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+  background-color: var(--color-surface);
+  padding: var(--space-3);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+  font-style: italic;
+}
+
+.noteText {
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-3);
+}
+
+.annotationFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.actionBtn {
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  background: none;
+  padding: 0;
+}
+
+.actionBtn:hover {
+  color: var(--color-accent-dim);
+}
+
+.deleteBtn {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  background: none;
+  padding: 0;
+}
+
+.deleteBtn:hover {
+  color: var(--color-ink);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-16) 0;
+}
+
+.emptyTitle {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-size: var(--text-2xl);
+  color: var(--color-ink);
+  margin-bottom: var(--space-3);
+}
+
+.emptyText {
+  font-size: var(--text-base);
+  color: var(--color-muted);
+}

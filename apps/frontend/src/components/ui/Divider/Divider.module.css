@@ -1,0 +1,25 @@
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-surface-2);
+}
+
+.label {
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.plain {
+  height: 1px;
+  background-color: var(--color-surface-2);
+  width: 100%;
+}

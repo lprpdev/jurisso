@@ -1,0 +1,119 @@
+/* ============================================================
+   Search History Page
+   ============================================================ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-size: var(--text-3xl);
+}
+
+.clearAllBtn {
+  font-size: var(--text-sm);
+  color: var(--color-error);
+  background: none;
+  font-weight: 500;
+}
+
+.clearAllBtn:hover {
+  color: var(--color-ink);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.historyItem {
+  background-color: var(--color-white);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.historyContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.queryText {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-ink);
+  margin-bottom: var(--space-2);
+}
+
+.historyMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+.filterBadge {
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  background-color: var(--color-surface-2);
+  color: var(--color-ink-soft);
+}
+
+.resultCount {
+  color: var(--color-muted);
+}
+
+.historyDate {
+  color: var(--color-muted);
+}
+
+.historyActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.relaunchLink {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.relaunchLink:hover {
+  color: var(--color-accent-dim);
+}
+
+.deleteBtn {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  background: none;
+}
+
+.deleteBtn:hover {
+  color: var(--color-error);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-16) 0;
+}
+
+.emptyTitle {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-size: var(--text-2xl);
+  color: var(--color-ink);
+  margin-bottom: var(--space-3);
+}
+
+.emptyText {
+  font-size: var(--text-base);
+  color: var(--color-muted);
+}

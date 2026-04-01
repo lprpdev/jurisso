@@ -1,0 +1,75 @@
+/* ============================================================
+   Login Page
+   ============================================================ */
+
+.heading {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-size: var(--text-base);
+  color: var(--color-muted);
+  margin-bottom: var(--space-8);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.passwordHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.passwordHeader label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.forgotLink {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  font-weight: 400;
+}
+
+.forgotLink:hover {
+  color: var(--color-accent-dim);
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
+.footer {
+  text-align: center;
+  margin-top: var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.footer a {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.footer a:hover {
+  color: var(--color-accent-dim);
+}
+
+.errorMessage {
+  background-color: #fef2f2;
+  color: var(--color-error);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  animation: fadeIn var(--transition-base);
+}

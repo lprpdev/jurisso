@@ -1,0 +1,66 @@
+/* Cookies — legal typography + table */
+
+.heading { font-family: var(--font-playfair); font-size: 2rem; font-weight: 900; color: var(--color-ink); margin: 0 0 0.5rem; }
+.lastUpdate { font-family: var(--font-dm-sans); font-size: 0.8125rem; color: var(--color-muted); margin: 0 0 2.5rem; }
+.section { margin-bottom: 2.5rem; }
+.sectionTitle { font-family: var(--font-playfair); font-size: 1.25rem; font-weight: 800; color: var(--color-ink); margin: 0 0 1rem; }
+.paragraph { font-family: var(--font-dm-sans); font-size: 0.9375rem; color: var(--color-muted); line-height: 1.8; margin: 0 0 0.75rem; }
+.list { list-style: none; margin: 0 0 1rem; padding: 0; }
+.listItem { font-family: var(--font-dm-sans); font-size: 0.9375rem; color: var(--color-muted); line-height: 1.8; padding: 0.25rem 0; padding-left: 1.25rem; position: relative; }
+.listItem::before { content: ''; position: absolute; left: 0; top: 0.85rem; width: 5px; height: 5px; background-color: var(--color-accent); clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+.strong { font-weight: 600; color: var(--color-ink); }
+.link { color: var(--color-accent); text-decoration: none; }
+.link:hover { text-decoration: underline; }
+
+.cookieTable {
+  width: 100%;
+  font-family: var(--font-dm-sans);
+  font-size: 0.8125rem;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.cookieTable th,
+.cookieTable td {
+  text-align: left;
+  padding: 0.625rem 0.75rem;
+  color: var(--color-muted);
+}
+
+.cookieTable th {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.cookieTable thead tr {
+  position: relative;
+}
+
+.cookieTable thead tr::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-ink);
+}
+
+.cookieTable tbody tr {
+  position: relative;
+}
+
+.cookieTable tbody tr::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-surface);
+}
+
+.mono {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+}

@@ -1,0 +1,217 @@
+/* ───────────────────────────────────────────
+   A propos — page.module.css
+   ─────────────────────────────────────────── */
+
+.page { min-height: 100vh; }
+
+.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-ink); }
+.navLogo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 900; color: #fff; text-decoration: none; }
+.navLinks { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+.navLink { font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 500; color: var(--color-surface-2); text-decoration: none; }
+.navRight { display: flex; align-items: center; gap: 1.5rem; }
+.navLogin { font-family: var(--font-dm-sans); font-size: 0.875rem; color: var(--color-surface-2); text-decoration: none; }
+.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-accent); color: #fff; font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 600; text-decoration: none; }
+
+/* Hero */
+.hero {
+  padding: 6rem clamp(1.5rem,4vw,4rem) 4rem;
+  background-color: var(--color-ink);
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: var(--font-playfair);
+  font-size: clamp(2rem,4vw,3rem);
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 1rem;
+}
+
+.heroSubtitle {
+  font-family: var(--font-dm-sans);
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: var(--color-surface-2);
+  max-width: 36rem;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Mission */
+.mission {
+  padding: 5rem clamp(1.5rem,4vw,4rem);
+  background-color: #fff;
+}
+
+.missionInner {
+  max-width: 44rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.missionTitle {
+  font-family: var(--font-playfair);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-ink);
+  margin: 0 0 1.5rem;
+}
+
+.missionText {
+  font-family: var(--font-dm-sans);
+  font-size: 1rem;
+  color: var(--color-muted);
+  line-height: 1.8;
+  margin: 0 0 1rem;
+}
+
+/* Values */
+.values {
+  padding: 5rem clamp(1.5rem,4vw,4rem);
+  background-color: var(--color-surface);
+}
+
+.sectionTitle {
+  font-family: var(--font-playfair);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-ink);
+  text-align: center;
+  margin: 0 0 3rem;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.valueCard {
+  padding: 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.valueIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-accent);
+  margin: 0 auto 1rem;
+}
+
+.valueTitle {
+  font-family: var(--font-dm-sans);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0 0 0.5rem;
+}
+
+.valueDesc {
+  font-family: var(--font-dm-sans);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Team */
+.team {
+  padding: 5rem clamp(1.5rem,4vw,4rem);
+  background-color: #fff;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.teamCard {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.teamAvatar {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--color-surface);
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle(50%);
+}
+
+.teamAvatarIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-muted);
+}
+
+.teamName {
+  font-family: var(--font-dm-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0 0 0.25rem;
+}
+
+.teamRole {
+  font-family: var(--font-dm-sans);
+  font-size: 0.8125rem;
+  color: var(--color-accent);
+  margin: 0 0 0.75rem;
+}
+
+.teamBio {
+  font-family: var(--font-dm-sans);
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Press */
+.press {
+  padding: 5rem clamp(1.5rem,4vw,4rem);
+  background-color: var(--color-surface);
+}
+
+.pressLogos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.pressLogo {
+  font-family: var(--font-playfair);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  opacity: 0.5;
+}
+
+/* Footer */
+.footer { padding: 4rem clamp(1.5rem,4vw,4rem) 2rem; background-color: var(--color-ink); }
+.footerGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 64rem; margin: 0 auto 3rem; }
+.footerHeading { font-family: var(--font-dm-sans); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-surface-2); margin: 0 0 1rem; }
+.footerLinks { list-style: none; margin: 0; padding: 0; }
+.footerLink { display: block; font-family: var(--font-dm-sans); font-size: 0.875rem; color: var(--color-muted); text-decoration: none; padding: 0.25rem 0; }
+.footerBottom { text-align: center; position: relative; padding-top: 2rem; }
+.footerBottom::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background-color: rgba(255,255,255,0.08); }
+.footerCopy { font-family: var(--font-dm-sans); font-size: 0.75rem; color: var(--color-muted); margin: 0; }
+
+@media (max-width: 768px) {
+  .navLinks { display: none; }
+  .valuesGrid, .teamGrid { grid-template-columns: repeat(2, 1fr); }
+  .footerGrid { grid-template-columns: repeat(2, 1fr); }
+  .pressLogos { flex-wrap: wrap; }
+}

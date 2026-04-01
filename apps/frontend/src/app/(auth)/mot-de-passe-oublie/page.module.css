@@ -1,0 +1,60 @@
+/* ============================================================
+   Forgot Password Page
+   ============================================================ */
+
+.heading {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-size: var(--text-base);
+  color: var(--color-muted);
+  margin-bottom: var(--space-8);
+  line-height: var(--leading-relaxed);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: var(--space-2);
+}
+
+.successMessage {
+  background-color: #f0fdf4;
+  color: var(--color-success);
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.errorMessage {
+  background-color: #fef2f2;
+  color: var(--color-error);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.backLink {
+  text-align: center;
+  margin-top: var(--space-6);
+  font-size: var(--text-sm);
+}
+
+.backLink a {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.backLink a:hover {
+  color: var(--color-accent-dim);
+}

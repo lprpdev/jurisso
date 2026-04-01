@@ -1,0 +1,73 @@
+/* ============================================================
+   Email Verification Waiting Page
+   ============================================================ */
+
+.container {
+  text-align: center;
+  padding: var(--space-8) 0;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-6);
+  color: var(--color-accent);
+}
+
+.heading {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: var(--space-3);
+}
+
+.description {
+  font-size: var(--text-base);
+  color: var(--color-muted);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-8);
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.resendButton {
+  font-size: var(--text-sm);
+  color: var(--color-accent);
+  background: none;
+  font-weight: 500;
+  padding: var(--space-2) var(--space-4);
+}
+
+.resendButton:hover {
+  color: var(--color-accent-dim);
+}
+
+.resendButton:disabled {
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+.backLink {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.backLink a {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.successToast {
+  font-size: var(--text-sm);
+  color: var(--color-success);
+  margin-top: var(--space-2);
+}

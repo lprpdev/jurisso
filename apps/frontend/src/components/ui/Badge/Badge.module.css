@@ -1,0 +1,42 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.sm {
+  font-size: var(--text-xs);
+  padding: 2px var(--space-2);
+}
+
+.md {
+  font-size: var(--text-sm);
+  padding: var(--space-1) var(--space-3);
+}
+
+.accent {
+  background-color: rgba(26, 60, 255, 0.1);
+  color: var(--color-accent);
+}
+
+.success {
+  background-color: rgba(0, 135, 90, 0.1);
+  color: var(--color-success);
+}
+
+.warning {
+  background-color: rgba(180, 83, 9, 0.1);
+  color: var(--color-warning);
+}
+
+.error {
+  background-color: rgba(192, 57, 43, 0.1);
+  color: var(--color-error);
+}
+
+.muted {
+  background-color: rgba(107, 107, 128, 0.1);
+  color: var(--color-muted);
+}

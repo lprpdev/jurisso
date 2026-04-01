@@ -1,0 +1,57 @@
+/* ============================================================
+   Dashboard Loading Skeleton
+   ============================================================ */
+
+.container {
+  animation: fadeIn var(--transition-base);
+}
+
+.header {
+  margin-bottom: var(--space-8);
+}
+
+.skeleton {
+  background-color: var(--color-surface-2);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.skeletonTitle {
+  width: 240px;
+  height: 36px;
+  margin-bottom: var(--space-3);
+}
+
+.skeletonSubtitle {
+  width: 180px;
+  height: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.skeletonCard {
+  height: 200px;
+}
+
+.skeletonCardWide {
+  height: 200px;
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skeletonCardWide {
+    grid-column: span 1;
+  }
+}

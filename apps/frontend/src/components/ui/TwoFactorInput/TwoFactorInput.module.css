@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+}
+
+.input {
+  width: 48px;
+  height: 56px;
+  text-align: center;
+  font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  color: var(--color-ink);
+  background-color: var(--color-white);
+  outline: 2px solid var(--color-surface-2);
+  transition: outline-color var(--transition-fast);
+  caret-color: var(--color-accent);
+}
+
+.input:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+.input::placeholder {
+  color: var(--color-surface-2);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

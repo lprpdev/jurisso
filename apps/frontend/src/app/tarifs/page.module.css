@@ -1,0 +1,363 @@
+/* ───────────────────────────────────────────
+   Tarifs — page.module.css
+   ─────────────────────────────────────────── */
+
+.page { min-height: 100vh; }
+
+/* ── Nav ── */
+.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-ink); }
+.navLogo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 900; color: #fff; text-decoration: none; }
+.navLinks { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
+.navLink { font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 500; color: var(--color-surface-2); text-decoration: none; }
+.navRight { display: flex; align-items: center; gap: 1.5rem; }
+.navLogin { font-family: var(--font-dm-sans); font-size: 0.875rem; color: var(--color-surface-2); text-decoration: none; }
+.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-accent); color: #fff; font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 600; text-decoration: none; }
+
+/* ── Hero ── */
+.hero {
+  padding: 6rem clamp(1.5rem,4vw,4rem) 3rem;
+  background-color: var(--color-ink);
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: var(--font-playfair);
+  font-size: clamp(2rem,4vw,3rem);
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 1rem;
+}
+
+.heroSubtitle {
+  font-family: var(--font-dm-sans);
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: var(--color-surface-2);
+  margin: 0 auto;
+  max-width: 32rem;
+  line-height: 1.7;
+}
+
+/* ── Toggle ── */
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+  background-color: var(--color-ink);
+}
+
+.toggleLabel {
+  font-family: var(--font-dm-sans);
+  font-size: 0.875rem;
+  color: var(--color-surface-2);
+}
+
+.toggleLabelActive {
+  composes: toggleLabel;
+  color: #fff;
+  font-weight: 600;
+}
+
+.toggleTrack {
+  width: 3rem;
+  height: 1.5rem;
+  background-color: rgba(255,255,255,0.15);
+  position: relative;
+  cursor: pointer;
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  background-color: var(--color-accent);
+  transition: left 0.2s;
+}
+
+.toggleBadge {
+  font-family: var(--font-dm-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-left: 0.25rem;
+}
+
+/* ── Plans Grid ── */
+.plans {
+  padding: 0 clamp(1.5rem,4vw,4rem) 4rem;
+  background-color: var(--color-ink);
+}
+
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.planCard {
+  padding: 2.5rem 2rem;
+  background-color: rgba(255,255,255,0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.planCardFeatured {
+  composes: planCard;
+  background-color: rgba(255,255,255,0.12);
+  position: relative;
+}
+
+.planCardFeatured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background-color: var(--color-accent);
+}
+
+.planBadge {
+  display: inline-block;
+  font-family: var(--font-dm-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background-color: rgba(255,255,255,0.08);
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 1rem;
+  align-self: flex-start;
+}
+
+.planName {
+  font-family: var(--font-dm-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 0.5rem;
+}
+
+.planPrice {
+  font-family: var(--font-playfair);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.planPriceSuffix {
+  font-family: var(--font-dm-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-surface-2);
+}
+
+.planPeriod {
+  font-family: var(--font-dm-sans);
+  font-size: 0.8125rem;
+  color: var(--color-surface-2);
+  margin: 0.25rem 0 1.5rem;
+}
+
+.planFeatures {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  flex: 1;
+}
+
+.planFeature {
+  font-family: var(--font-dm-sans);
+  font-size: 0.875rem;
+  color: var(--color-surface-2);
+  padding: 0.4rem 0;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.planFeature::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  width: 0.5rem; height: 0.5rem;
+  background-color: var(--color-accent);
+  clip-path: polygon(20% 40%, 45% 65%, 90% 15%, 100% 25%, 45% 80%, 10% 50%);
+}
+
+.planFeatureDisabled {
+  composes: planFeature;
+  color: rgba(255,255,255,0.25);
+}
+
+.planFeatureDisabled::before {
+  background-color: rgba(255,255,255,0.15);
+  clip-path: polygon(20% 20%, 50% 45%, 80% 20%, 85% 25%, 55% 50%, 85% 75%, 80% 80%, 50% 55%, 20% 80%, 15% 75%, 45% 50%, 15% 25%);
+}
+
+.planCta {
+  display: block;
+  text-align: center;
+  padding: 0.75rem;
+  font-family: var(--font-dm-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background-color: rgba(255,255,255,0.08);
+  transition: background-color 0.15s;
+}
+
+.planCta:hover {
+  background-color: rgba(255,255,255,0.15);
+}
+
+.planCtaAccent {
+  composes: planCta;
+  background-color: var(--color-accent);
+}
+
+.planCtaAccent:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* ── Comparison Table ── */
+.comparison {
+  padding: 4rem clamp(1.5rem,4vw,4rem);
+  background-color: #fff;
+}
+
+.comparisonTitle {
+  font-family: var(--font-playfair);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-ink);
+  text-align: center;
+  margin: 0 0 3rem;
+}
+
+.comparisonTable {
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  font-family: var(--font-dm-sans);
+  font-size: 0.875rem;
+  border-collapse: collapse;
+}
+
+.comparisonTable th,
+.comparisonTable td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.comparisonTable thead th {
+  font-weight: 700;
+  color: var(--color-ink);
+  position: relative;
+}
+
+.comparisonTable thead th::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background-color: var(--color-ink);
+}
+
+.comparisonTable tbody tr {
+  position: relative;
+}
+
+.comparisonTable tbody tr::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background-color: var(--color-surface);
+}
+
+.comparisonTable td {
+  color: var(--color-muted);
+}
+
+.comparisonTable td:first-child {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.checkMark {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.crossMark {
+  color: var(--color-muted);
+  opacity: 0.4;
+}
+
+/* ── FAQ ── */
+.faq {
+  padding: 4rem clamp(1.5rem,4vw,4rem) 6rem;
+  background-color: var(--color-surface);
+}
+
+.faqTitle {
+  font-family: var(--font-playfair);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-ink);
+  text-align: center;
+  margin: 0 0 3rem;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.faqItem {
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.faqQuestion {
+  font-family: var(--font-dm-sans);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin: 0 0 0.5rem;
+}
+
+.faqAnswer {
+  font-family: var(--font-dm-sans);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Footer ── */
+.footer { padding: 4rem clamp(1.5rem,4vw,4rem) 2rem; background-color: var(--color-ink); }
+.footerGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 64rem; margin: 0 auto 3rem; }
+.footerHeading { font-family: var(--font-dm-sans); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-surface-2); margin: 0 0 1rem; }
+.footerLinks { list-style: none; margin: 0; padding: 0; }
+.footerLink { display: block; font-family: var(--font-dm-sans); font-size: 0.875rem; color: var(--color-muted); text-decoration: none; padding: 0.25rem 0; }
+.footerBottom { text-align: center; position: relative; padding-top: 2rem; }
+.footerBottom::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background-color: rgba(255,255,255,0.08); }
+.footerCopy { font-family: var(--font-dm-sans); font-size: 0.75rem; color: var(--color-muted); margin: 0; }
+
+@media (max-width: 768px) {
+  .navLinks { display: none; }
+  .plansGrid { grid-template-columns: 1fr; }
+  .faqGrid { grid-template-columns: 1fr; }
+  .footerGrid { grid-template-columns: repeat(2, 1fr); }
+}

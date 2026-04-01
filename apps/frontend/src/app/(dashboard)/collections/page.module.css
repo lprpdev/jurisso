@@ -1,0 +1,140 @@
+/* ============================================================
+   Collections Page
+   ============================================================ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-size: var(--text-3xl);
+}
+
+.newBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.newBtn:hover {
+  background-color: var(--color-accent-dim);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.card {
+  background-color: var(--color-white);
+  padding: var(--space-5);
+  display: block;
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: background-color var(--transition-fast);
+}
+
+.card:hover {
+  background-color: var(--color-surface);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.colorDot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  clip-path: circle(50%);
+}
+
+.cardName {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-size: var(--text-lg);
+  font-weight: 700;
+}
+
+.cardDescription {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  line-height: var(--leading-normal);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: var(--space-3);
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+.cardActions {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.cardAction {
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  background: none;
+  padding: 0;
+}
+
+.cardAction:hover {
+  color: var(--color-accent-dim);
+}
+
+.cardActionDanger {
+  color: var(--color-error);
+}
+
+.cardActionDanger:hover {
+  color: var(--color-ink);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--space-16) 0;
+}
+
+.emptyTitle {
+  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-size: var(--text-2xl);
+  color: var(--color-ink);
+  margin-bottom: var(--space-3);
+}
+
+.emptyText {
+  font-size: var(--text-base);
+  color: var(--color-muted);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
