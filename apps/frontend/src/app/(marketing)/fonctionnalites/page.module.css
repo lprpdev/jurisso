@@ -7,79 +7,6 @@
   min-height: 100vh;
 }
 
-/* ── Nav (reused pattern) ── */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 clamp(1.5rem, 4vw, 4rem);
-  height: 4rem;
-  background-color: var(--color-primary);
-  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-}
-
-.navLogo {
-  font-family: var(--font-manrope);
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--color-on-primary);
-  text-decoration: none;
-}
-
-.navLinks {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navLink {
-  font-family: var(--font-manrope);
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-secondary-fixed-dim);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
-.navLink:hover {
-  color: var(--color-on-primary);
-}
-
-.navRight {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.navLogin {
-  font-family: var(--font-manrope);
-  font-size: 0.875rem;
-  color: var(--color-secondary-fixed-dim);
-  text-decoration: none;
-}
-
-.navCta {
-  display: inline-block;
-  padding: 0.5rem 1.25rem;
-  background-color: var(--color-primary-container);
-  color: var(--color-on-primary);
-  font-family: var(--font-manrope);
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  transition: none;}
-
-.navCta:hover {
-
-}
-
 /* ── Hero ── */
 .hero {
   padding: 6rem clamp(1.5rem, 4vw, 4rem) 4rem;
@@ -261,10 +188,6 @@
 }
 
 @media (max-width: 768px) {
-  .navLinks {
-    display: none;
-  }
-
   .featureInner,
   .featureInnerReverse {
     grid-template-columns: 1fr;
