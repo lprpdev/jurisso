@@ -1,62 +1,49 @@
 'use client';
-
 import { type ReactNode, useState, useRef, useEffect, useCallback } from 'react';
 import styles from './Dropdown.module.css';
-
 interface DropdownItem {
   label: string;
   onClick: () => void;
   icon?: ReactNode;
 }
-
 interface DropdownProps {
   trigger: ReactNode;
   items: DropdownItem[];
 }
-
-export function Dropdown({ trigger, items }: DropdownProps) {
+export default function Dropdown({ trigger, items }: DropdownProps) {
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-
   const close = useCallback(() => setOpen(false), []);
-
   useEffect(() => {
     if (!open) return;
-
     function handleClickOutside(e: MouseEvent) {
       if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
         close();
       }
     }
-
     function handleKeyDown(e: KeyboardEvent) {
       if (e.key === 'Escape') {
         close();
       }
     }
-
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('keydown', handleKeyDown);
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [open, close]);
-
   useEffect(() => {
     if (open && menuRef.current) {
       const firstItem = menuRef.current.querySelector<HTMLElement>('button');
       firstItem?.focus();
     }
   }, [open]);
-
   function handleMenuKeyDown(e: React.KeyboardEvent) {
     if (!menuRef.current) return;
     const buttons = Array.from(menuRef.current.querySelectorAll<HTMLElement>('button'));
     const currentIndex = buttons.indexOf(document.activeElement as HTMLElement);
-
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       const next = currentIndex < buttons.length - 1 ? currentIndex + 1 : 0;
@@ -67,7 +54,6 @@ export function Dropdown({ trigger, items }: DropdownProps) {
       buttons[prev].focus();
     }
   }
-
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
       <div

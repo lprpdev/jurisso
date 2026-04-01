@@ -1,21 +1,17 @@
 'use client';
-
 import { useRef, useCallback, type KeyboardEvent, type ClipboardEvent } from 'react';
 import styles from './TwoFactorInput.module.css';
-
 interface TwoFactorInputProps {
   length?: number;
   onComplete: (code: string) => void;
   disabled?: boolean;
 }
-
-export function TwoFactorInput({
+export default function TwoFactorInput({
   length = 6,
   onComplete,
   disabled,
 }: TwoFactorInputProps) {
   const inputsRef = useRef<(HTMLInputElement | null)[]>([]);
-
   const focusInput = useCallback(
     (index: number) => {
       if (index >= 0 && index < length) {
@@ -25,11 +21,9 @@ export function TwoFactorInput({
     },
     [length],
   );
-
   const getCode = useCallback(() => {
     return inputsRef.current.map((input) => input?.value ?? '').join('');
   }, []);
-
   const handleInput = useCallback(
     (index: number, value: string) => {
       const digit = value.replace(/\D/g, '').slice(-1);
@@ -37,11 +31,9 @@ export function TwoFactorInput({
       if (input) {
         input.value = digit;
       }
-
       if (digit && index < length - 1) {
         focusInput(index + 1);
       }
-
       const code = getCode();
       if (code.length === length && /^\d+$/.test(code)) {
         onComplete(code);
@@ -49,7 +41,6 @@ export function TwoFactorInput({
     },
     [length, focusInput, getCode, onComplete],
   );
-
   const handleKeyDown = useCallback(
     (index: number, e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === 'Backspace') {
@@ -69,30 +60,25 @@ export function TwoFactorInput({
     },
     [focusInput],
   );
-
   const handlePaste = useCallback(
     (e: ClipboardEvent<HTMLInputElement>) => {
       e.preventDefault();
       const pasted = e.clipboardData.getData('text').replace(/\D/g, '').slice(0, length);
-
       pasted.split('').forEach((digit, i) => {
         const input = inputsRef.current[i];
         if (input) {
           input.value = digit;
         }
       });
-
       if (pasted.length > 0) {
         focusInput(Math.min(pasted.length, length - 1));
       }
-
       if (pasted.length === length) {
         onComplete(pasted);
       }
     },
     [length, focusInput, onComplete],
   );
-
   return (
     <div className={styles.wrapper} role="group" aria-label="Code de verification">
       {Array.from({ length }, (_, i) => (

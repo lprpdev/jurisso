@@ -1,13 +1,10 @@
 'use client';
-
 import { useId } from 'react';
 import styles from './Select.module.css';
-
 interface SelectOption {
   value: string;
   label: string;
 }
-
 interface SelectProps {
   label?: string;
   options: SelectOption[];
@@ -17,8 +14,7 @@ interface SelectProps {
   error?: string;
   disabled?: boolean;
 }
-
-export function Select({
+export default function Select({
   label,
   options,
   value,
@@ -29,11 +25,9 @@ export function Select({
 }: SelectProps) {
   const id = useId();
   const errorId = error ? `${id}-error` : undefined;
-
   const fieldClasses = [styles.field, error ? styles.hasError : '']
     .filter(Boolean)
     .join(' ');
-
   return (
     <div className={fieldClasses}>
       {label ? (

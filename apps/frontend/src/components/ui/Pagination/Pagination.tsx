@@ -1,55 +1,41 @@
 'use client';
-
 import styles from './Pagination.module.css';
-
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
   onPageChange?: (page: number) => void;
   baseUrl?: string;
 }
-
 function getPageRange(current: number, total: number): (number | 'ellipsis')[] {
   if (total <= 7) {
     return Array.from({ length: total }, (_, i) => i + 1);
   }
-
   const pages: (number | 'ellipsis')[] = [1];
-
   if (current > 3) {
     pages.push('ellipsis');
   }
-
   const start = Math.max(2, current - 1);
   const end = Math.min(total - 1, current + 1);
-
   for (let i = start; i <= end; i++) {
     pages.push(i);
   }
-
   if (current < total - 2) {
     pages.push('ellipsis');
   }
-
   pages.push(total);
-
   return pages;
 }
-
-export function Pagination({
+export default function Pagination({
   currentPage,
   totalPages,
   onPageChange,
   baseUrl,
 }: PaginationProps) {
   if (totalPages <= 1) return null;
-
   const pages = getPageRange(currentPage, totalPages);
-
   function renderPageButton(page: number) {
     const isActive = page === currentPage;
     const classes = `${styles.btn} ${isActive ? styles.active : ''}`;
-
     if (baseUrl && !onPageChange) {
       return (
         <a
@@ -63,7 +49,6 @@ export function Pagination({
         </a>
       );
     }
-
     return (
       <button
         key={page}
@@ -77,7 +62,6 @@ export function Pagination({
       </button>
     );
   }
-
   return (
     <nav className={styles.pagination} aria-label="Pagination">
       <button
@@ -91,7 +75,6 @@ export function Pagination({
           <polyline points="15 18 9 12 15 6" />
         </svg>
       </button>
-
       {pages.map((page, i) =>
         page === 'ellipsis' ? (
           <span key={`ellipsis-${i}`} className={styles.ellipsis} aria-hidden="true">
@@ -101,7 +84,6 @@ export function Pagination({
           renderPageButton(page)
         ),
       )}
-
       <button
         type="button"
         className={styles.btn}

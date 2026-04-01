@@ -1,9 +1,7 @@
 'use client';
-
 import type { SearchFilters, DocumentType } from '@jurisso/shared';
 import { Select } from '@/components/ui/Select/Select';
 import styles from './FilterPanel.module.css';
-
 const DOCUMENT_TYPES: { value: DocumentType; label: string }[] = [
   { value: 'decision', label: 'Decision' },
   { value: 'loi', label: 'Loi' },
@@ -13,7 +11,6 @@ const DOCUMENT_TYPES: { value: DocumentType; label: string }[] = [
   { value: 'code', label: 'Code' },
   { value: 'article', label: 'Article' },
 ];
-
 const JURISDICTIONS = [
   { value: '', label: 'Toutes les juridictions' },
   { value: 'cour_cassation', label: 'Cour de cassation' },
@@ -22,7 +19,6 @@ const JURISDICTIONS = [
   { value: 'cour_appel', label: "Cour d'appel" },
   { value: 'tribunal_judiciaire', label: 'Tribunal judiciaire' },
 ];
-
 const MATTERS = [
   { value: '', label: 'Toutes les matieres' },
   { value: 'civil', label: 'Droit civil' },
@@ -32,7 +28,6 @@ const MATTERS = [
   { value: 'administratif', label: 'Droit administratif' },
   { value: 'fiscal', label: 'Droit fiscal' },
 ];
-
 const SOLUTIONS = [
   { value: '', label: 'Toutes les solutions' },
   { value: 'rejet', label: 'Rejet' },
@@ -41,13 +36,11 @@ const SOLUTIONS = [
   { value: 'irrecevabilite', label: 'Irrecevabilite' },
   { value: 'non_lieu', label: 'Non-lieu' },
 ];
-
 interface FilterPanelProps {
   filters: SearchFilters;
   onChange: (filters: SearchFilters) => void;
 }
-
-export function FilterPanel({ filters, onChange }: FilterPanelProps) {
+export default function FilterPanel({ filters, onChange }: FilterPanelProps) {
   function handleTypeToggle(type: DocumentType) {
     const current = filters.type ?? [];
     const next = current.includes(type)
@@ -55,11 +48,9 @@ export function FilterPanel({ filters, onChange }: FilterPanelProps) {
       : [...current, type];
     onChange({ ...filters, type: next.length > 0 ? next : undefined });
   }
-
   function handleReset() {
     onChange({});
   }
-
   return (
     <aside className={styles.panel} aria-label="Filtres de recherche">
       {/* Document type */}
@@ -79,9 +70,7 @@ export function FilterPanel({ filters, onChange }: FilterPanelProps) {
           ))}
         </div>
       </div>
-
       <div className={styles.separator} />
-
       {/* Jurisdiction */}
       <div className={styles.section}>
         <Select
@@ -94,9 +83,7 @@ export function FilterPanel({ filters, onChange }: FilterPanelProps) {
           placeholder="Toutes les juridictions"
         />
       </div>
-
       <div className={styles.separator} />
-
       {/* Matter */}
       <div className={styles.section}>
         <Select
@@ -107,9 +94,7 @@ export function FilterPanel({ filters, onChange }: FilterPanelProps) {
           placeholder="Toutes les matieres"
         />
       </div>
-
       <div className={styles.separator} />
-
       {/* Date range */}
       <div className={styles.section}>
         <h3 className={styles.sectionTitle}>Periode</h3>
@@ -135,9 +120,7 @@ export function FilterPanel({ filters, onChange }: FilterPanelProps) {
           />
         </div>
       </div>
-
       <div className={styles.separator} />
-
       {/* Solution */}
       <div className={styles.section}>
         <Select
@@ -150,9 +133,7 @@ export function FilterPanel({ filters, onChange }: FilterPanelProps) {
           placeholder="Toutes les solutions"
         />
       </div>
-
       <div className={styles.separator} />
-
       <button type="button" className={styles.resetBtn} onClick={handleReset}>
         Reinitialiser les filtres
       </button>

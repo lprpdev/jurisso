@@ -1,17 +1,13 @@
 'use client';
-
 import styles from './Alert.module.css';
-
 interface AlertProps {
   type?: 'info' | 'success' | 'warning' | 'error';
   title: string;
   message: string;
   onClose?: () => void;
 }
-
-export function Alert({ type = 'info', title, message, onClose }: AlertProps) {
+export default function Alert({ type = 'info', title, message, onClose }: AlertProps) {
   const classes = `${styles.alert} ${styles[type]}`;
-
   return (
     <div className={classes} role="alert">
       <div className={styles.header}>

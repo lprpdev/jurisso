@@ -1,5 +1,4 @@
 'use client';
-
 import {
   type ReactNode,
   createContext,
@@ -9,9 +8,7 @@ import {
   useRef,
 } from 'react';
 import styles from './Toast.module.css';
-
 type ToastType = 'success' | 'error' | 'info' | 'warning';
-
 interface ToastData {
   id: string;
   type: ToastType;
@@ -19,13 +16,10 @@ interface ToastData {
   message?: string;
   dismissing?: boolean;
 }
-
 interface ToastContextValue {
   toast: (type: ToastType, title: string, message?: string) => void;
 }
-
 const ToastContext = createContext<ToastContextValue | null>(null);
-
 export function useToast(): ToastContextValue {
   const ctx = useContext(ToastContext);
   if (!ctx) {
@@ -33,15 +27,12 @@ export function useToast(): ToastContextValue {
   }
   return ctx;
 }
-
 interface ToastProviderProps {
   children: ReactNode;
 }
-
 export function ToastProvider({ children }: ToastProviderProps) {
   const [toasts, setToasts] = useState<ToastData[]>([]);
   const counterRef = useRef(0);
-
   const removeToast = useCallback((id: string) => {
     setToasts((prev) =>
       prev.map((t) => (t.id === id ? { ...t, dismissing: true } : t)),
@@ -50,7 +41,6 @@ export function ToastProvider({ children }: ToastProviderProps) {
       setToasts((prev) => prev.filter((t) => t.id !== id));
     }, 200);
   }, []);
-
   const toast = useCallback(
     (type: ToastType, title: string, message?: string) => {
       counterRef.current += 1;
@@ -60,7 +50,6 @@ export function ToastProvider({ children }: ToastProviderProps) {
     },
     [removeToast],
   );
-
   return (
     <ToastContext.Provider value={{ toast }}>
       {children}
@@ -94,3 +83,5 @@ export function ToastProvider({ children }: ToastProviderProps) {
     </ToastContext.Provider>
   );
 }
+
+export default ToastProvider;

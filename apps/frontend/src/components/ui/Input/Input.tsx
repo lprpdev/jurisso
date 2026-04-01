@@ -1,16 +1,13 @@
 'use client';
-
 import { type InputHTMLAttributes, useState, useId } from 'react';
 import styles from './Input.module.css';
-
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   type?: 'text' | 'email' | 'password' | 'search';
   label?: string;
   hint?: string;
   error?: string;
 }
-
-export function Input({
+export default function Input({
   type = 'text',
   label,
   hint,
@@ -26,7 +23,6 @@ export function Input({
   const errorId = error ? `${inputId}-error` : undefined;
   const hintId = hint && !error ? `${inputId}-hint` : undefined;
   const isPassword = type === 'password';
-
   const fieldClasses = [
     styles.field,
     error ? styles.hasError : '',
@@ -34,14 +30,12 @@ export function Input({
   ]
     .filter(Boolean)
     .join(' ');
-
   const inputClasses = [
     styles.input,
     isPassword ? styles.inputWithToggle : '',
   ]
     .filter(Boolean)
     .join(' ');
-
   return (
     <div className={fieldClasses}>
       {label ? (

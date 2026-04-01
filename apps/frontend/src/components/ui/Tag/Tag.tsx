@@ -1,13 +1,10 @@
 'use client';
-
 import styles from './Tag.module.css';
-
 interface TagProps {
   label: string;
   onRemove?: () => void;
 }
-
-export function Tag({ label, onRemove }: TagProps) {
+export default function Tag({ label, onRemove }: TagProps) {
   return (
     <span className={styles.tag}>
       {label}

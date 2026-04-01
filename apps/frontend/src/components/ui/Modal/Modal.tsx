@@ -1,9 +1,7 @@
 'use client';
-
 import { type ReactNode, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import styles from './Modal.module.css';
-
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -11,27 +9,22 @@ interface ModalProps {
   children: ReactNode;
   footer?: ReactNode;
 }
-
-export function Modal({ isOpen, onClose, title, children, footer }: ModalProps) {
+export default function Modal({ isOpen, onClose, title, children, footer }: ModalProps) {
   const panelRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
-
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
         return;
       }
-
       if (e.key === 'Tab' && panelRef.current) {
         const focusable = panelRef.current.querySelectorAll<HTMLElement>(
           'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
         );
         if (focusable.length === 0) return;
-
         const first = focusable[0];
         const last = focusable[focusable.length - 1];
-
         if (e.shiftKey && document.activeElement === first) {
           e.preventDefault();
           last.focus();
@@ -43,20 +36,16 @@ export function Modal({ isOpen, onClose, title, children, footer }: ModalProps) 
     },
     [onClose],
   );
-
   useEffect(() => {
     if (!isOpen) return;
-
     previousFocusRef.current = document.activeElement as HTMLElement;
     document.addEventListener('keydown', handleKeyDown);
     document.body.style.overflow = 'hidden';
-
     // Focus the close button on open
     const timer = setTimeout(() => {
       const closeBtn = panelRef.current?.querySelector<HTMLElement>('button');
       closeBtn?.focus();
     }, 0);
-
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = '';
@@ -64,15 +53,12 @@ export function Modal({ isOpen, onClose, title, children, footer }: ModalProps) 
       previousFocusRef.current?.focus();
     };
   }, [isOpen, handleKeyDown]);
-
   if (!isOpen) return null;
-
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
   };
-
   const modal = (
     <div
       className={styles.overlay}
@@ -107,6 +93,5 @@ export function Modal({ isOpen, onClose, title, children, footer }: ModalProps) 
       </div>
     </div>
   );
-
   return createPortal(modal, document.body);
 }

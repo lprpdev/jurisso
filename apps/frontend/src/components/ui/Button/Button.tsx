@@ -1,9 +1,7 @@
 'use client';
-
 import { type ButtonHTMLAttributes, type ReactNode } from 'react';
 import { Spinner } from '@/components/ui/Spinner/Spinner';
 import styles from './Button.module.css';
-
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'ghost' | 'danger';
   size?: 'sm' | 'md' | 'lg';
@@ -11,8 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
   children: ReactNode;
 }
-
-export function Button({
+export default function Button({
   variant = 'primary',
   size = 'md',
   loading = false,
@@ -32,7 +29,6 @@ export function Button({
   ]
     .filter(Boolean)
     .join(' ');
-
   return (
     <button
       className={classes}

@@ -1,14 +1,11 @@
 import styles from './Divider.module.css';
-
 interface DividerProps {
   label?: string;
 }
-
-export function Divider({ label }: DividerProps) {
+export default function Divider({ label }: DividerProps) {
   if (!label) {
     return <div className={styles.plain} role="separator" />;
   }
-
   return (
     <div className={styles.divider} role="separator">
       <div className={styles.line} />

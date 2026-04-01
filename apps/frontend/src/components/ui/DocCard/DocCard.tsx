@@ -1,10 +1,8 @@
 'use client';
-
 import type { DocumentSearchResult } from '@jurisso/shared';
 import { Badge } from '@/components/ui/Badge/Badge';
 import { Tag } from '@/components/ui/Tag/Tag';
 import styles from './DocCard.module.css';
-
 const TYPE_LABELS: Record<string, string> = {
   decision: 'Decision',
   loi: 'Loi',
@@ -14,15 +12,13 @@ const TYPE_LABELS: Record<string, string> = {
   code: 'Code',
   article: 'Article',
 };
-
 interface DocCardProps {
   decision: DocumentSearchResult;
   onFavorite?: (id: string) => void;
   onAddToCollection?: (id: string) => void;
   onShare?: (id: string) => void;
 }
-
-export function DocCard({
+export default function DocCard({
   decision,
   onFavorite,
   onAddToCollection,
@@ -35,7 +31,6 @@ export function DocCard({
         year: 'numeric',
       })
     : null;
-
   return (
     <article className={styles.card}>
       <div className={styles.topRow}>
@@ -56,7 +51,6 @@ export function DocCard({
           ) : null}
         </div>
       </div>
-
       {decision.number || decision.ecli ? (
         <div className={styles.number}>
           {decision.number ? `N\u00B0 ${decision.number}` : ''}
@@ -64,14 +58,11 @@ export function DocCard({
           {decision.ecli ?? ''}
         </div>
       ) : null}
-
       <div className={styles.separator} />
-
       <div
         className={styles.summary}
         dangerouslySetInnerHTML={{ __html: decision.headline }}
       />
-
       {decision.keywords.length > 0 ? (
         <div className={styles.tags}>
           {decision.keywords.slice(0, 5).map((kw) => (
@@ -79,7 +70,6 @@ export function DocCard({
           ))}
         </div>
       ) : null}
-
       <div className={styles.actions}>
         <button
           type="button"
