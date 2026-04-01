@@ -26,17 +26,17 @@ jurisso/
 
 ```bash
 # 1. Installer les dépendances
-npm install
+pnpm install
 
 # 2. Configurer les variables d'environnement
 cp .env.example .env
 # Éditer .env avec vos valeurs
 
 # 3. Lancer les migrations
-npm run db:migrate
+pnpm db:migrate
 
 # 4. Démarrer en développement
-npm run dev
+pnpm dev
 ```
 
 ## Docker

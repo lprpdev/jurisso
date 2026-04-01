@@ -1,11 +1,13 @@
 FROM node:20-alpine AS base
 
+RUN corepack enable && corepack prepare pnpm@9.15.0 --activate
+
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-COPY package.json ./
-RUN npm install --frozen-lockfile || npm install
+COPY package.json pnpm-lock.yaml* ./
+RUN pnpm install --frozen-lockfile
 
 FROM base AS builder
 WORKDIR /app
@@ -14,7 +16,7 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN npm run build
+RUN pnpm run build
 
 FROM base AS runner
 WORKDIR /app
