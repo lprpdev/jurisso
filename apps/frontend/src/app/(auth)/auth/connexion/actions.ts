@@ -42,7 +42,7 @@ export async function loginAction(
         sameSite: 'lax',
         maxAge: 300, // 5 minutes
       });
-      redirect('/2fa');
+      redirect('/auth/2fa');
     }
 
     // Set the JWT access token in an httpOnly cookie
