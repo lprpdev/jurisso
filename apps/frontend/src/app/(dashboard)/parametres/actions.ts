@@ -16,7 +16,7 @@ export async function exportRGPDAction(): Promise<{
 }
 
 export async function revokeSessionAction(sessionId: string) {
-  await api(`/users/me/sessions/${sessionId}`, { method: 'DELETE' });
+  await api(`/api/users/me/sessions/${sessionId}`, { method: 'DELETE' });
   revalidatePath('/parametres');
 }
 

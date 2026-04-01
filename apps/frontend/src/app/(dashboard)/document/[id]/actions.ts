@@ -5,7 +5,7 @@ import { api } from '@/lib/api';
 
 export async function toggleFavoriteAction(documentId: string, isFavorite: boolean) {
   if (isFavorite) {
-    await api(`/favorites/${documentId}`, { method: 'DELETE' });
+    await api(`/api/favorites/${documentId}`, { method: 'DELETE' });
   } else {
     await api('/favorites', {
       method: 'POST',

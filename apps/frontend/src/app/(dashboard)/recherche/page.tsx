@@ -83,15 +83,21 @@ export default async function RecherchePage({
       });
       const raw = await api<{ data: SearchResult[]; total: number; page: number; totalPages: number }>(`/api/search?${searchQuery.toString()}`);
       data = {
-        results: raw.data.map((d: any) => ({
-          id: d.id,
-          title: d.title,
-          type: d.type,
-          jurisdiction: d.jurisdiction,
-          date: d.dateDecision || d.datePublication || d.createdAt,
-          number: d.reference || d.numberEcli,
-          excerpt: d.highlight || d.summary || d.content?.substring(0, 200) || '',
-        })),
+        results: raw.data.map((d: any) => {
+          const fullTitle = d.title || '';
+          const truncatedTitle = fullTitle.length > 120
+            ? fullTitle.substring(0, 120) + '\u2026'
+            : fullTitle;
+          return {
+            id: d.id,
+            title: truncatedTitle,
+            type: d.type,
+            jurisdiction: d.jurisdiction,
+            date: d.dateDecision || d.datePublication || d.createdAt,
+            number: d.reference || d.numberEcli,
+            excerpt: d.highlight || (d.summary && d.summary !== fullTitle ? d.summary.substring(0, 250) + '\u2026' : d.content?.substring(0, 250) + '\u2026') || '',
+          };
+        }),
         total: raw.total,
         page: raw.page,
         totalPages: raw.totalPages,

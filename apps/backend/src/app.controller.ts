@@ -1,4 +1,4 @@
-import { Controller, Get, Post, OnModuleInit } from '@nestjs/common';
+import { Controller, Get, Post, Query, OnModuleInit } from '@nestjs/common';
 import { ApiTags, ApiOperation } from '@nestjs/swagger';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -71,8 +71,9 @@ export class HealthController implements OnModuleInit {
 
   @Post('sync')
   @ApiOperation({ summary: 'Trigger Judilibre sync (dev only)' })
-  async sync() {
-    const result = await this.legifranceService.syncDecisions(5);
+  async sync(@Query('pages') pages?: string) {
+    const maxPages = Math.min(parseInt(pages || '5', 10), 200);
+    const result = await this.legifranceService.syncDecisions(maxPages);
     return { status: 'ok', ...result };
   }
 }

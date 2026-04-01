@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 import { api } from '@/lib/api';
 
 export async function toggleAlertAction(alertId: string, active: boolean) {
-  await api(`/alerts/${alertId}`, {
+  await api(`/api/alerts/${alertId}`, {
     method: 'PATCH',
     body: { active },
   });
@@ -12,7 +12,7 @@ export async function toggleAlertAction(alertId: string, active: boolean) {
 }
 
 export async function deleteAlertAction(alertId: string) {
-  await api(`/alerts/${alertId}`, { method: 'DELETE' });
+  await api(`/api/alerts/${alertId}`, { method: 'DELETE' });
   revalidatePath('/alertes');
 }
 

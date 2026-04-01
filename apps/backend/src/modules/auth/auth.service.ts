@@ -162,15 +162,17 @@ export class AuthService {
 
     const tokens = await this.generateTokens(user, ip, userAgent);
 
-    // Send new device login alert
-    const blockUrl = `${this.configService.get<string>('APP_URL', 'https://app.jurisso.fr')}/account/security/sessions`;
-    await this.emailService.sendNewDeviceLoginEmail(
-      user.email,
-      user.firstName,
-      userAgent,
-      ip,
-      blockUrl,
-    );
+    // Send new device login alert (only if user opted in)
+    if (user.notifyOnLogin) {
+      const blockUrl = `${this.configService.get<string>('APP_URL', 'http://localhost:3000')}/parametres`;
+      await this.emailService.sendNewDeviceLoginEmail(
+        user.email,
+        user.firstName,
+        userAgent,
+        ip,
+        blockUrl,
+      );
+    }
 
     await this.auditService.log({
       userId: user.id,

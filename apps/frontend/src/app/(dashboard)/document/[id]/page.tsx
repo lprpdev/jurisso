@@ -9,13 +9,16 @@ interface Document {
   title: string;
   type: string;
   jurisdiction: string;
-  date: string;
-  number: string;
-  solution?: string;
+  dateDecision: string | null;
+  datePublication: string | null;
+  reference: string | null;
+  numberEcli: string | null;
+  numberPourvoi: string | null;
   keywords: string[];
-  summary: string;
-  fullText: string;
-  isFavorite: boolean;
+  themes: string[];
+  summary: string | null;
+  content: string;
+  metadata: Record<string, unknown> | null;
 }
 
 interface Annotation {
@@ -38,7 +41,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { id } = await params;
   try {
-    const doc = await api<Document>(`/documents/${id}`);
+    const doc = await api<Document>(`/api/documents/${id}`);
     return { title: doc.title };
   } catch {
     return { title: 'Document' };
@@ -58,9 +61,9 @@ export default async function DocumentPage({
 
   try {
     [doc, annotations, related] = await Promise.all([
-      api<Document>(`/documents/${id}`),
-      api<Annotation[]>(`/documents/${id}/annotations`),
-      api<RelatedDoc[]>(`/documents/${id}/related`),
+      api<Document>(`/api/documents/${id}`),
+      api<Annotation[]>(`/api/annotations?documentId=${id}`).catch(() => []),
+      api<RelatedDoc[]>(`/api/documents/${id}/related`).catch(() => []),
     ]);
   } catch {
     return (
@@ -73,12 +76,21 @@ export default async function DocumentPage({
     );
   }
 
-  const paragraphs = doc.fullText
+  const paragraphs = (doc.content || '')
     .split('\n')
     .filter((p) => p.trim().length > 0);
 
+  const solution = doc.metadata?.solution as string | undefined;
+  const date = doc.dateDecision || doc.datePublication;
+  const number = doc.reference || doc.numberPourvoi || doc.numberEcli;
+  const allKeywords = [...(doc.themes || []), ...(doc.keywords || [])];
+
   const citedDocs = related.filter((r) => r.relation === 'cited');
   const citingDocs = related.filter((r) => r.relation === 'citing');
+
+  const displayTitle = doc.title.length > 150
+    ? doc.title.substring(0, 150) + '\u2026'
+    : doc.title;
 
   return (
     <div className={styles.layout}>
@@ -86,36 +98,44 @@ export default async function DocumentPage({
       <article className={styles.document}>
         <div className={styles.badges}>
           <span className={`${styles.badge} ${styles.badgeAccent}`}>
-            {doc.type}
+            {doc.type.toUpperCase()}
           </span>
-          <span className={styles.badge}>{doc.jurisdiction}</span>
+          {doc.jurisdiction && (
+            <span className={styles.badge}>{doc.jurisdiction.replace(/_/g, ' ')}</span>
+          )}
         </div>
 
-        <h1 className={styles.docTitle}>{doc.title}</h1>
+        <h1 className={styles.docTitle}>{displayTitle}</h1>
 
         <div className={styles.metaRow}>
-          <span className={styles.metaItem}>
-            {new Date(doc.date).toLocaleDateString('fr-FR', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </span>
-          <span className={styles.metaSeparator}>|</span>
-          <span className={styles.metaItem}>
-            N{'\u00B0'} {doc.number}
-          </span>
-          {doc.solution && (
+          {date && (
+            <span className={styles.metaItem}>
+              {new Date(date).toLocaleDateString('fr-FR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </span>
+          )}
+          {number && (
             <>
               <span className={styles.metaSeparator}>|</span>
-              <span className={styles.metaItem}>{doc.solution}</span>
+              <span className={styles.metaItem}>
+                N{'\u00B0'} {number}
+              </span>
+            </>
+          )}
+          {solution && (
+            <>
+              <span className={styles.metaSeparator}>|</span>
+              <span className={styles.metaItem}>{solution}</span>
             </>
           )}
         </div>
 
-        {doc.keywords.length > 0 && (
+        {allKeywords.length > 0 && (
           <div className={styles.keywords}>
-            {doc.keywords.map((kw) => (
+            {allKeywords.slice(0, 10).map((kw) => (
               <span key={kw} className={styles.keyword}>
                 {kw}
               </span>
@@ -125,10 +145,13 @@ export default async function DocumentPage({
 
         <div className={styles.divider} />
 
-        <h2 className={styles.sectionTitle}>Résumé</h2>
-        <p className={styles.summary}>{doc.summary}</p>
-
-        <div className={styles.divider} />
+        {doc.summary && (
+          <>
+            <h2 className={styles.sectionTitle}>Résumé</h2>
+            <p className={styles.summary}>{doc.summary}</p>
+            <div className={styles.divider} />
+          </>
+        )}
 
         <h2 className={styles.sectionTitle}>Texte intégral</h2>
         <div className={styles.fullText}>
@@ -147,7 +170,7 @@ export default async function DocumentPage({
         <div className={styles.sidePanelSection}>
           <DocumentActions
             documentId={doc.id}
-            isFavorite={doc.isFavorite}
+            isFavorite={false}
           />
         </div>
 

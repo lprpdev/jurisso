@@ -84,6 +84,9 @@ export class User {
   @Column({ type: 'boolean', default: false })
   newsletter!: boolean;
 
+  @Column({ type: 'boolean', default: false })
+  notifyOnLogin!: boolean;
+
   @Column({ type: 'boolean', default: true })
   isActive!: boolean;
 

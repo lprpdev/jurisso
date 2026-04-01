@@ -9,6 +9,6 @@ export async function clearAllHistoryAction() {
 }
 
 export async function deleteHistoryItemAction(itemId: string) {
-  await api(`/search/history/${itemId}`, { method: 'DELETE' });
+  await api(`/api/search/history/${itemId}`, { method: 'DELETE' });
   revalidatePath('/historique');
 }
