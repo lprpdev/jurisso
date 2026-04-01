@@ -31,7 +31,7 @@ export function LoginForm() {
       <div>
         <div className={styles.passwordHeader}>
           <label htmlFor="password">Mot de passe</label>
-          <Link href="/mot-de-passe-oublie" className={styles.forgotLink}>
+          <Link href="/auth/mot-de-passe-oublie" className={styles.forgotLink}>
             Mot de passe oublié ?
           </Link>
         </div>

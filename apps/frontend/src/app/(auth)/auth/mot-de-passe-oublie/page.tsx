@@ -17,7 +17,7 @@ export default function MotDePasseOubliePage() {
       </p>
       <ForgotPasswordForm />
       <p className={styles.backLink}>
-        <Link href="/connexion">&larr;&nbsp;Retour à la connexion</Link>
+        <Link href="/auth/connexion">&larr;&nbsp;Retour à la connexion</Link>
       </p>
     </>
   );

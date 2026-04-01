@@ -19,7 +19,7 @@ export default function InscriptionPage() {
       <RegisterForm />
       <p className={styles.footer}>
         Déjà un compte ?{' '}
-        <Link href="/connexion">Connexion&nbsp;&rarr;</Link>
+        <Link href="/auth/connexion">Connexion&nbsp;&rarr;</Link>
       </p>
     </>
   );

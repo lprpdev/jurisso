@@ -18,7 +18,7 @@ export default function ConnexionPage() {
       <LoginForm />
       <p className={styles.footer}>
         Pas de compte ?{' '}
-        <Link href="/inscription">Inscription gratuite&nbsp;&rarr;</Link>
+        <Link href="/auth/inscription">Inscription gratuite&nbsp;&rarr;</Link>
       </p>
     </>
   );

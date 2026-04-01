@@ -35,7 +35,7 @@ export function VerificationEmailContent() {
         </span>
       )}
       <p className={styles.backLink}>
-        <Link href="/connexion">Retour à la connexion</Link>
+        <Link href="/auth/connexion">Retour à la connexion</Link>
       </p>
     </div>
   );

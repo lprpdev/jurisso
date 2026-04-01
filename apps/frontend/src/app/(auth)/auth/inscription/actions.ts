@@ -59,6 +59,7 @@ export async function registerAction(
         profession,
         barNumber: profession === 'avocat' ? barNumber : undefined,
         password,
+        acceptsCgu: true,
         newsletter,
       }),
     });

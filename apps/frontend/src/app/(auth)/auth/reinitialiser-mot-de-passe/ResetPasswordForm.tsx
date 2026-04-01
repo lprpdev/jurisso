@@ -19,7 +19,7 @@ export function ResetPasswordForm({ token }: { token: string }) {
     return (
       <div className={styles.successMessage}>
         Votre mot de passe a été réinitialisé avec succès.
-        <Link href="/connexion">Se connecter&nbsp;&rarr;</Link>
+        <Link href="/auth/connexion">Se connecter&nbsp;&rarr;</Link>
       </div>
     );
   }
