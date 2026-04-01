@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import { auth } from '@/lib/auth';
 import { SidebarNav } from './SidebarNav';
+import DashboardUserMenu from './DashboardUserMenu';
 import styles from './layout.module.css';
 
 export default async function DashboardLayout({
@@ -106,15 +107,12 @@ export default async function DashboardLayout({
             {planLabel}
           </span>
 
-          <div className={styles.avatarDropdown}>
-            <button
-              type="button"
-              className={styles.avatarButton}
-              aria-label="Menu utilisateur"
-            >
-              {initials.toUpperCase()}
-            </button>
-          </div>
+          <DashboardUserMenu
+            initials={initials}
+            firstName={user.firstName ?? ''}
+            lastName={user.lastName ?? ''}
+            plan={planLabel}
+          />
         </div>
       </header>
 

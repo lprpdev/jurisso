@@ -165,6 +165,24 @@ export class LegifranceService {
               where: { legifranceId: item.id },
             });
 
+            // Skip if already has full text content
+            if (existing?.content && existing.content.length > 500) {
+              continue;
+            }
+
+            // Fetch full text from decision endpoint
+            let fullText = item.text || '';
+            if (!fullText || fullText.length < 100) {
+              try {
+                const detail = await this.getJudilibreDecision(item.id);
+                if (detail?.text) {
+                  fullText = detail.text;
+                }
+              } catch {
+                this.logger.warn(`Could not fetch full text for ${item.id}`);
+              }
+            }
+
             const title = item.summary
               ? item.summary.substring(0, 500)
               : `Decision n° ${item.number || item.id}`;
@@ -173,7 +191,7 @@ export class LegifranceService {
               legifranceId: item.id,
               type: DocumentType.DECISION,
               title,
-              content: item.text || '',
+              content: fullText,
               summary: item.summary || null,
               reference: item.number || null,
               numberEcli: item.ecli || null,
