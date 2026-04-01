@@ -1,38 +1,39 @@
 /* ───────────────────────────────────────────
    Tarifs — page.module.css
+   Atelier Legal Design System
    ─────────────────────────────────────────── */
 
 .page { min-height: 100vh; }
 
 /* ── Nav ── */
-.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-ink); }
-.navLogo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 900; color: #fff; text-decoration: none; }
+.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-primary); border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+.navLogo { font-family: var(--font-manrope); font-size: 1.5rem; font-weight: 900; color: var(--color-on-primary); text-decoration: none; }
 .navLinks { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
-.navLink { font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 500; color: var(--color-surface-2); text-decoration: none; }
+.navLink { font-family: var(--font-manrope); font-size: 0.875rem; font-weight: 500; color: var(--color-secondary-fixed-dim); text-decoration: none; }
 .navRight { display: flex; align-items: center; gap: 1.5rem; }
-.navLogin { font-family: var(--font-dm-sans); font-size: 0.875rem; color: var(--color-surface-2); text-decoration: none; }
-.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-accent); color: #fff; font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 600; text-decoration: none; }
+.navLogin { font-family: var(--font-manrope); font-size: 0.875rem; color: var(--color-secondary-fixed-dim); text-decoration: none; }
+.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-primary-container); color: var(--color-on-primary); font-family: var(--font-manrope); font-size: 0.875rem; font-weight: 600; text-decoration: none; border-radius: var(--radius-md); }
 
 /* ── Hero ── */
 .hero {
   padding: 6rem clamp(1.5rem,4vw,4rem) 3rem;
-  background-color: var(--color-ink);
+  background-color: var(--color-primary);
   text-align: center;
 }
 
 .heroTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: clamp(2rem,4vw,3rem);
   font-weight: 900;
-  color: #fff;
+  color: var(--color-on-primary);
   margin: 0 0 1rem;
 }
 
 .heroSubtitle {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 1.125rem;
   font-weight: 300;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
   margin: 0 auto;
   max-width: 32rem;
   line-height: 1.7;
@@ -45,18 +46,18 @@
   justify-content: center;
   gap: 1rem;
   padding: 2rem 0;
-  background-color: var(--color-ink);
+  background-color: var(--color-primary);
 }
 
 .toggleLabel {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
 }
 
 .toggleLabelActive {
   composes: toggleLabel;
-  color: #fff;
+  color: var(--color-on-primary);
   font-weight: 600;
 }
 
@@ -64,6 +65,7 @@
   width: 3rem;
   height: 1.5rem;
   background-color: rgba(255,255,255,0.15);
+  border-radius: var(--radius-full);
   position: relative;
   cursor: pointer;
 }
@@ -74,22 +76,23 @@
   left: 0.1875rem;
   width: 1.125rem;
   height: 1.125rem;
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary-fixed-dim);
+  border-radius: var(--radius-full);
   transition: left 0.2s;
 }
 
 .toggleBadge {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.6875rem;
   font-weight: 700;
-  color: var(--color-accent);
+  color: var(--color-secondary-fixed-dim);
   margin-left: 0.25rem;
 }
 
 /* ── Plans Grid ── */
 .plans {
   padding: 0 clamp(1.5rem,4vw,4rem) 4rem;
-  background-color: var(--color-ink);
+  background-color: var(--color-primary);
 }
 
 .plansGrid {
@@ -103,6 +106,8 @@
 .planCard {
   padding: 2.5rem 2rem;
   background-color: rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,0.08);
   display: flex;
   flex-direction: column;
 }
@@ -116,52 +121,54 @@
 .planCardFeatured::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0; left: 1.5rem; right: 1.5rem;
   height: 3px;
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary-fixed-dim);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
 .planBadge {
   display: inline-block;
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.6875rem;
   font-weight: 700;
-  color: var(--color-accent);
+  color: var(--color-secondary-fixed-dim);
   background-color: rgba(255,255,255,0.08);
   padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
   margin-bottom: 1rem;
   align-self: flex-start;
 }
 
 .planName {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-secondary-fixed-dim);
   margin: 0 0 0.5rem;
 }
 
 .planPrice {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: 3rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-on-primary);
   margin: 0;
 }
 
 .planPriceSuffix {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 1rem;
   font-weight: 400;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
 }
 
 .planPeriod {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.8125rem;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
   margin: 0.25rem 0 1.5rem;
 }
 
@@ -173,9 +180,9 @@
 }
 
 .planFeature {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
   padding: 0.4rem 0;
   padding-left: 1.25rem;
   position: relative;
@@ -186,7 +193,7 @@
   position: absolute;
   left: 0; top: 50%;
   width: 0.5rem; height: 0.5rem;
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary-fixed-dim);
   clip-path: polygon(20% 40%, 45% 65%, 90% 15%, 100% 25%, 45% 80%, 10% 50%);
 }
 
@@ -204,12 +211,13 @@
   display: block;
   text-align: center;
   padding: 0.75rem;
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
-  color: #fff;
+  color: var(--color-on-primary);
   background-color: rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
   transition: background-color 0.15s;
 }
 
@@ -219,24 +227,24 @@
 
 .planCtaAccent {
   composes: planCta;
-  background-color: var(--color-accent);
+  background-color: var(--color-primary-container);
 }
 
 .planCtaAccent:hover {
-  background-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-primary);
 }
 
 /* ── Comparison Table ── */
 .comparison {
   padding: 4rem clamp(1.5rem,4vw,4rem);
-  background-color: #fff;
+  background-color: var(--color-background);
 }
 
 .comparisonTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   text-align: center;
   margin: 0 0 3rem;
 }
@@ -245,7 +253,7 @@
   width: 100%;
   max-width: 64rem;
   margin: 0 auto;
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
   border-collapse: collapse;
 }
@@ -258,7 +266,7 @@
 
 .comparisonTable thead th {
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   position: relative;
 }
 
@@ -267,7 +275,7 @@
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 2px;
-  background-color: var(--color-ink);
+  background-color: var(--color-on-surface);
 }
 
 .comparisonTable tbody tr {
@@ -279,39 +287,40 @@
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 1px;
-  background-color: var(--color-surface);
+  background-color: var(--color-outline-variant);
+  opacity: 0.3;
 }
 
 .comparisonTable td {
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
 }
 
 .comparisonTable td:first-child {
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   font-weight: 500;
 }
 
 .checkMark {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-weight: 700;
 }
 
 .crossMark {
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   opacity: 0.4;
 }
 
 /* ── FAQ ── */
 .faq {
   padding: 4rem clamp(1.5rem,4vw,4rem) 6rem;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
 }
 
 .faqTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   text-align: center;
   margin: 0 0 3rem;
 }
@@ -326,21 +335,23 @@
 
 .faqItem {
   padding: 1.5rem;
-  background-color: #fff;
+  background-color: var(--color-surface-container-lowest);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 .faqQuestion {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.9375rem;
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 0.5rem;
 }
 
 .faqAnswer {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: 1.6;
   margin: 0;
 }

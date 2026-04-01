@@ -1,5 +1,6 @@
 /* ───────────────────────────────────────────
    Fonctionnalites — page.module.css
+   Atelier Legal Design System
    ─────────────────────────────────────────── */
 
 .page {
@@ -16,14 +17,15 @@
   justify-content: space-between;
   padding: 0 clamp(1.5rem, 4vw, 4rem);
   height: 4rem;
-  background-color: var(--color-ink);
+  background-color: var(--color-primary);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
 }
 
 .navLogo {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: 1.5rem;
   font-weight: 900;
-  color: #fff;
+  color: var(--color-on-primary);
   text-decoration: none;
 }
 
@@ -37,16 +39,16 @@
 }
 
 .navLink {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
   text-decoration: none;
   transition: color 0.15s;
 }
 
 .navLink:hover {
-  color: #fff;
+  color: var(--color-on-primary);
 }
 
 .navRight {
@@ -56,44 +58,50 @@
 }
 
 .navLogin {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
   text-decoration: none;
 }
 
 .navCta {
   display: inline-block;
   padding: 0.5rem 1.25rem;
-  background-color: var(--color-accent);
-  color: #fff;
-  font-family: var(--font-dm-sans);
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: box-shadow 0.15s;
+}
+
+.navCta:hover {
+  box-shadow: var(--shadow-primary);
 }
 
 /* ── Hero ── */
 .hero {
   padding: 6rem clamp(1.5rem, 4vw, 4rem) 4rem;
-  background-color: var(--color-ink);
+  background-color: var(--color-primary);
   text-align: center;
 }
 
 .heroTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 900;
-  color: #fff;
+  color: var(--color-on-primary);
   margin: 0 0 1rem;
   letter-spacing: -0.03em;
 }
 
 .heroSubtitle {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 1.125rem;
   font-weight: 300;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
   max-width: 36rem;
   margin: 0 auto;
   line-height: 1.7;
@@ -102,11 +110,12 @@
 /* ── Feature Sections ── */
 .featureSection {
   padding: 6rem clamp(1.5rem, 4vw, 4rem);
+  background-color: var(--color-background);
 }
 
 .featureSectionAlt {
   composes: featureSection;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
 }
 
 .featureInner {
@@ -127,28 +136,28 @@
 }
 
 .featureLabel {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin: 0 0 0.75rem;
 }
 
 .featureTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 1rem;
   letter-spacing: -0.02em;
 }
 
 .featureDesc {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.9375rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: 1.7;
   margin: 0 0 1.5rem;
 }
@@ -160,9 +169,9 @@
 }
 
 .featureUseCase {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   padding: 0.5rem 0;
   padding-left: 1.25rem;
   position: relative;
@@ -176,7 +185,7 @@
   transform: translateY(-50%);
   width: 6px;
   height: 6px;
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
@@ -185,12 +194,13 @@
   align-items: center;
   justify-content: center;
   min-height: 20rem;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
+  border-radius: var(--radius-lg);
   position: relative;
 }
 
 .featureSectionAlt .featureIllustration {
-  background-color: #fff;
+  background-color: var(--color-surface-container-lowest);
 }
 
 .illustrationPlaceholder {
@@ -199,35 +209,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-muted);
-  font-family: var(--font-dm-sans);
+  color: var(--color-on-surface-variant);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
 }
 
 .illustrationIcon {
   width: 4rem;
   height: 4rem;
-  color: var(--color-accent);
+  color: var(--color-primary);
   opacity: 0.5;
 }
 
 /* ── CTA ── */
 .cta {
   padding: 5rem clamp(1.5rem, 4vw, 4rem);
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   text-align: center;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 
 .ctaTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: clamp(1.5rem, 2.5vw, 2rem);
   font-weight: 800;
-  color: #fff;
+  color: var(--color-on-primary);
   margin: 0 0 0.75rem;
 }
 
 .ctaSubtitle {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.85);
   margin: 0 0 2rem;
@@ -236,12 +247,19 @@
 .ctaButton {
   display: inline-block;
   padding: 0.875rem 2.5rem;
-  background-color: #fff;
-  color: var(--color-accent);
-  font-family: var(--font-dm-sans);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-primary);
+  font-family: var(--font-manrope);
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: box-shadow 0.15s;
+}
+
+.ctaButton:hover {
+  box-shadow: var(--shadow-lg);
 }
 
 @media (max-width: 768px) {

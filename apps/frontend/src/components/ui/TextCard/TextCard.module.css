@@ -1,15 +1,18 @@
 .card {
-  background-color: var(--color-white);
+  background-color: var(--color-surface-container-lowest);
   padding: var(--space-5) var(--space-6);
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 .card:hover {
   transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .topRow {
@@ -20,10 +23,10 @@
 }
 
 .title {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
-  font-weight: 700;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+  font-weight: 800;
   font-size: var(--text-lg);
-  color: var(--color-ink);
+  color: var(--color-primary);
   line-height: var(--leading-snug);
 }
 
@@ -32,21 +35,22 @@
   align-items: center;
   gap: var(--space-2);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   flex-wrap: wrap;
 }
 
 .metaSep {
   width: 3px;
   height: 3px;
-  background-color: var(--color-muted);
+  background-color: var(--color-on-surface-variant);
+  border-radius: var(--radius-full);
   flex-shrink: 0;
 }
 
 .number {
   font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
   font-size: var(--text-xs);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
 }
 
 .separator {
@@ -61,12 +65,12 @@
   right: 0;
   top: 50%;
   height: 1px;
-  background-color: var(--color-surface-2);
+  background-color: rgba(196, 198, 209, 0.15);
 }
 
 .summary {
   font-size: var(--text-sm);
-  color: var(--color-ink-soft);
+  color: var(--color-on-surface-variant);
   line-height: var(--leading-relaxed);
   display: -webkit-box;
   -webkit-line-clamp: 3;

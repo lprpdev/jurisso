@@ -1,56 +1,57 @@
 /* ───────────────────────────────────────────
    Blog Article — page.module.css
+   Atelier Legal Design System
    ─────────────────────────────────────────── */
 
 .page { min-height: 100vh; }
 
-.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-ink); }
-.navLogo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 900; color: #fff; text-decoration: none; }
+.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-primary); border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+.navLogo { font-family: var(--font-manrope); font-size: 1.5rem; font-weight: 900; color: var(--color-on-primary); text-decoration: none; }
 .navLinks { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
-.navLink { font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 500; color: var(--color-surface-2); text-decoration: none; }
+.navLink { font-family: var(--font-manrope); font-size: 0.875rem; font-weight: 500; color: var(--color-secondary-fixed-dim); text-decoration: none; }
 .navRight { display: flex; align-items: center; gap: 1.5rem; }
-.navLogin { font-family: var(--font-dm-sans); font-size: 0.875rem; color: var(--color-surface-2); text-decoration: none; }
-.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-accent); color: #fff; font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 600; text-decoration: none; }
+.navLogin { font-family: var(--font-manrope); font-size: 0.875rem; color: var(--color-secondary-fixed-dim); text-decoration: none; }
+.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-primary-container); color: var(--color-on-primary); font-family: var(--font-manrope); font-size: 0.875rem; font-weight: 600; text-decoration: none; border-radius: var(--radius-md); }
 
 /* Header */
 .header {
   padding: 4rem clamp(1.5rem,4vw,4rem) 3rem;
-  background-color: var(--color-ink);
+  background-color: var(--color-primary);
   text-align: center;
 }
 
 .breadcrumb {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.8125rem;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
   margin: 0 0 1.5rem;
 }
 
 .breadcrumbLink {
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
   text-decoration: none;
 }
 
 .breadcrumbLink:hover {
-  color: #fff;
+  color: var(--color-on-primary);
 }
 
 .category {
   display: inline-block;
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-secondary-fixed-dim);
   margin: 0 0 1rem;
 }
 
 .title {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: clamp(1.75rem,3.5vw,2.5rem);
   font-weight: 900;
-  color: #fff;
+  color: var(--color-on-primary);
   max-width: 40rem;
   margin: 0 auto 1.5rem;
   line-height: 1.2;
@@ -61,9 +62,9 @@
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.8125rem;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
 }
 
 /* Layout */
@@ -84,12 +85,12 @@
 }
 
 .tocTitle {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin: 0 0 0.75rem;
 }
 
@@ -100,9 +101,9 @@
 }
 
 .tocItem {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.8125rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   padding: 0.3rem 0;
   padding-left: 0.75rem;
   position: relative;
@@ -111,7 +112,7 @@
 }
 
 .tocItem:hover {
-  color: var(--color-ink);
+  color: var(--color-on-surface);
 }
 
 .tocItem::before {
@@ -121,42 +122,45 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background-color: var(--color-surface);
+  background-color: var(--color-outline-variant);
+  opacity: 0.3;
+  border-radius: var(--radius-full);
 }
 
 /* Article body */
 .article {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 1rem;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   line-height: 1.8;
 }
 
 .article h2 {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 2.5rem 0 1rem;
 }
 
 .article h3 {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 2rem 0 0.75rem;
 }
 
 .article p {
   margin: 0 0 1.25rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
 }
 
 .article blockquote {
   margin: 1.5rem 0;
   padding: 1rem 1.5rem;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
+  border-radius: var(--radius-sm);
   position: relative;
 }
 
@@ -167,7 +171,8 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
 }
 
 .article ul {
@@ -177,7 +182,7 @@
 
 .article li {
   margin-bottom: 0.5rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
 }
 
 /* Share */
@@ -197,14 +202,15 @@
   left: 0;
   right: 0;
   height: 1px;
-  background-color: var(--color-surface);
+  background-color: var(--color-outline-variant);
+  opacity: 0.15;
 }
 
 .shareLabel {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
 }
 
 .shareButton {
@@ -213,15 +219,16 @@
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  background-color: var(--color-surface);
-  color: var(--color-muted);
+  background-color: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
   text-decoration: none;
+  border-radius: var(--radius-sm);
   transition: background-color 0.15s;
 }
 
 .shareButton:hover {
-  background-color: var(--color-ink);
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 .shareIcon {
@@ -235,13 +242,14 @@
   gap: 1.25rem;
   margin-top: 2rem;
   padding: 1.5rem;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
+  border-radius: var(--radius-lg);
 }
 
 .authorAvatar {
   width: 3.5rem;
   height: 3.5rem;
-  background-color: var(--color-ink);
+  background-color: var(--color-primary);
   clip-path: circle(50%);
   flex-shrink: 0;
   display: flex;
@@ -252,21 +260,21 @@
 .authorAvatarIcon {
   width: 1.5rem;
   height: 1.5rem;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
 }
 
 .authorName {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.9375rem;
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 0.25rem;
 }
 
 .authorRole {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.8125rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: 1.6;
   margin: 0;
 }
@@ -274,14 +282,14 @@
 /* Related */
 .related {
   padding: 4rem clamp(1.5rem,4vw,4rem);
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
 }
 
 .relatedTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   text-align: center;
   margin: 0 0 2rem;
 }
@@ -296,23 +304,25 @@
 
 .relatedCard {
   padding: 1.5rem;
-  background-color: #fff;
+  background-color: var(--color-surface-container-lowest);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
   text-decoration: none;
 }
 
 .relatedCardTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: 1rem;
   font-weight: 800;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 0.5rem;
   line-height: 1.3;
 }
 
 .relatedCardExcerpt {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.8125rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: 1.6;
   margin: 0;
 }

@@ -1,5 +1,5 @@
 /* ============================================================
-   Email Verification Waiting Page
+   Email Verification Waiting Page — Atelier Legal Design System
    ============================================================ */
 
 .container {
@@ -11,20 +11,21 @@
   width: 64px;
   height: 64px;
   margin: 0 auto var(--space-6);
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .heading {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-family: var(--font-manrope);
   font-size: var(--text-3xl);
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin-bottom: var(--space-3);
 }
 
 .description {
+  font-family: var(--font-manrope);
   font-size: var(--text-base);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-8);
   max-width: 380px;
@@ -40,33 +41,39 @@
 }
 
 .resendButton {
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-accent);
+  color: var(--color-primary);
   background: none;
   font-weight: 500;
   padding: var(--space-2) var(--space-4);
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
 }
 
 .resendButton:hover {
-  color: var(--color-accent-dim);
+  color: var(--color-primary-container);
 }
 
 .resendButton:disabled {
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   cursor: not-allowed;
 }
 
 .backLink {
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
 }
 
 .backLink a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-weight: 500;
 }
 
 .successToast {
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
   color: var(--color-success);
   margin-top: var(--space-2);

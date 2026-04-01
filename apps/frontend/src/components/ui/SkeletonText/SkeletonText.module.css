@@ -6,11 +6,12 @@
 
 .line {
   height: 14px;
+  border-radius: var(--radius-sm);
   background: linear-gradient(
     90deg,
-    var(--color-surface-2) 25%,
-    var(--color-surface) 50%,
-    var(--color-surface-2) 75%
+    var(--color-surface-container) 25%,
+    var(--color-surface-container-low) 50%,
+    var(--color-surface-container) 75%
   );
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;

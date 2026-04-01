@@ -20,13 +20,6 @@ export default async function DashboardLayout({
   const initials =
     (user.firstName?.[0] ?? '') + (user.lastName?.[0] ?? '');
 
-  const planClass =
-    user.plan === 'pro'
-      ? styles.planBadgePro
-      : user.plan === 'enterprise'
-        ? styles.planBadgeEnterprise
-        : '';
-
   const planLabel =
     user.plan === 'pro'
       ? 'Pro'
@@ -35,94 +28,99 @@ export default async function DashboardLayout({
         : 'Gratuit';
 
   return (
-    <>
-      {/* ----- Topbar ----- */}
-      <header className={styles.topbar}>
-        <Link href="/dashboard" className={styles.topbarLogo}>
-          JURISSO
-        </Link>
+    <div className={styles.shell}>
+      {/* ----- Sidebar ----- */}
+      <nav className={styles.sidebar} aria-label="Navigation principale">
+        <div className={styles.sidebarHeader}>
+          <div className={styles.logoIcon}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <path d="M3 21h18M3 7v1a4 4 0 004 4h10a4 4 0 004-4V7M12 12v9" />
+            </svg>
+          </div>
+          <div>
+            <Link href="/dashboard" className={styles.logoText}>JURISSO</Link>
+            <p className={styles.logoSub}>Recherche juridique</p>
+          </div>
+        </div>
 
-        <div className={styles.topbarSearch}>
-          <form action="/recherche" method="get">
-            <div className={styles.searchInputWrapper}>
-              <svg
-                className={styles.searchIcon}
-                viewBox="0 0 16 16"
-                fill="none"
-                aria-hidden="true"
-              >
-                <circle
-                  cx="7"
-                  cy="7"
-                  r="5.5"
+        <SidebarNav />
+
+        <div className={styles.sidebarFooter}>
+          <Link href="/recherche" className={styles.newSearchBtn}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            <span>Nouvelle recherche</span>
+          </Link>
+        </div>
+      </nav>
+
+      {/* ----- Main Area ----- */}
+      <main className={styles.mainArea}>
+        {/* Floating Header */}
+        <header className={styles.header}>
+          <div className={styles.headerLeft}>
+            <form action="/recherche" method="get" className={styles.searchForm}>
+              <div className={styles.searchInputWrapper}>
+                <svg
+                  className={styles.searchIcon}
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M11 11L14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+                <input
+                  type="search"
+                  name="q"
+                  className={styles.searchInput}
+                  placeholder="Rechercher dans les archives\u2026"
+                  autoComplete="off"
+                />
+              </div>
+            </form>
+          </div>
+
+          <div className={styles.headerRight}>
+            <button
+              type="button"
+              className={styles.notificationBtn}
+              aria-label="Notifications"
+            >
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path
+                  d="M10 2C7.24 2 5 4.24 5 7V11L3 13V14H17V13L15 11V7C15 4.24 12.76 2 10 2Z"
                   stroke="currentColor"
                   strokeWidth="1.5"
                 />
                 <path
-                  d="M11 11L14 14"
+                  d="M8 14V15C8 16.1 8.9 17 10 17C11.1 17 12 16.1 12 15V14"
                   stroke="currentColor"
                   strokeWidth="1.5"
-                  strokeLinecap="round"
                 />
               </svg>
-              <input
-                type="search"
-                name="q"
-                className={styles.searchInput}
-                placeholder="Rechercher jurisprudence, lois, codes\u2026"
-                autoComplete="off"
-              />
-            </div>
-          </form>
-        </div>
+            </button>
 
-        <div className={styles.topbarActions}>
-          <button
-            type="button"
-            className={styles.notificationBtn}
-            aria-label="Notifications"
-          >
-            <svg
-              className={styles.notificationIcon}
-              viewBox="0 0 20 20"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M10 2C7.24 2 5 4.24 5 7V11L3 13V14H17V13L15 11V7C15 4.24 12.76 2 10 2Z"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                fill="none"
-              />
-              <path
-                d="M8 14V15C8 16.1 8.9 17 10 17C11.1 17 12 16.1 12 15V14"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                fill="none"
-              />
-            </svg>
-          </button>
+            <span className={styles.planBadge}>{planLabel}</span>
 
-          <span className={`${styles.planBadge} ${planClass}`}>
-            {planLabel}
-          </span>
+            <DashboardUserMenu
+              initials={initials}
+              firstName={user.firstName ?? ''}
+              lastName={user.lastName ?? ''}
+              plan={planLabel}
+            />
+          </div>
+        </header>
 
-          <DashboardUserMenu
-            initials={initials}
-            firstName={user.firstName ?? ''}
-            lastName={user.lastName ?? ''}
-            plan={planLabel}
-          />
-        </div>
-      </header>
-
-      {/* ----- Sidebar ----- */}
-      <nav className={styles.sidebar} aria-label="Navigation principale">
-        <SidebarNav />
-      </nav>
-
-      {/* ----- Main Content ----- */}
-      <main className={styles.main}>{children}</main>
-    </>
+        {/* Canvas */}
+        <section className={styles.canvas}>
+          <div className={styles.canvasInner}>
+            {children}
+          </div>
+        </section>
+      </main>
+    </div>
   );
 }

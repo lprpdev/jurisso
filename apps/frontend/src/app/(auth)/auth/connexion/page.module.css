@@ -1,18 +1,19 @@
 /* ============================================================
-   Login Page
+   Login Page — Atelier Legal Design System
    ============================================================ */
 
 .heading {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-family: var(--font-manrope);
   font-size: var(--text-3xl);
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin-bottom: var(--space-2);
 }
 
 .subtitle {
+  font-family: var(--font-manrope);
   font-size: var(--text-base);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin-bottom: var(--space-8);
 }
 
@@ -29,19 +30,21 @@
 }
 
 .passwordHeader label {
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
 }
 
 .forgotLink {
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-weight: 400;
 }
 
 .forgotLink:hover {
-  color: var(--color-accent-dim);
+  color: var(--color-primary-container);
 }
 
 .submitButton {
@@ -52,24 +55,27 @@
 .footer {
   text-align: center;
   margin-top: var(--space-6);
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
 }
 
 .footer a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-weight: 500;
 }
 
 .footer a:hover {
-  color: var(--color-accent-dim);
+  color: var(--color-primary-container);
 }
 
 .errorMessage {
   background-color: #fef2f2;
   color: var(--color-error);
   padding: var(--space-3) var(--space-4);
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
   line-height: var(--leading-normal);
+  border-radius: var(--radius-sm);
   animation: fadeIn var(--transition-base);
 }

@@ -16,8 +16,9 @@
   padding: var(--space-4) var(--space-5);
   min-width: 320px;
   max-width: 420px;
-  background-color: var(--color-white);
-  outline: 1px solid var(--color-surface-2);
+  background-color: var(--color-surface-container-lowest);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
   animation: slideInRight 250ms ease forwards;
   pointer-events: auto;
   position: relative;
@@ -30,6 +31,7 @@
   top: 0;
   bottom: 0;
   width: 4px;
+  border-radius: var(--radius-full) 0 0 var(--radius-full);
 }
 
 .dismissing {
@@ -38,7 +40,7 @@
 
 .success::before { background-color: var(--color-success); }
 .error::before { background-color: var(--color-error); }
-.info::before { background-color: var(--color-accent); }
+.info::before { background-color: var(--color-primary); }
 .warning::before { background-color: var(--color-warning); }
 
 .content {
@@ -47,15 +49,15 @@
 }
 
 .toastTitle {
-  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
-  font-weight: 600;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+  font-weight: 700;
   font-size: var(--text-sm);
-  color: var(--color-ink);
+  color: var(--color-on-surface);
 }
 
 .toastMessage {
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin-top: 2px;
   line-height: var(--leading-normal);
 }
@@ -67,19 +69,21 @@
   width: 24px;
   height: 24px;
   background: none;
+  border: none;
   cursor: pointer;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   flex-shrink: 0;
   padding: 0;
   transition: color var(--transition-fast);
+  border-radius: var(--radius-sm);
 }
 
 .closeBtn:hover {
-  color: var(--color-ink);
+  color: var(--color-on-surface);
 }
 
 .closeBtn:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 

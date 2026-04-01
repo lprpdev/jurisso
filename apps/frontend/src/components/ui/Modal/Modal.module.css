@@ -1,7 +1,7 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(10, 10, 15, 0.6);
+  background-color: rgba(29, 28, 23, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,7 +11,7 @@
 }
 
 .panel {
-  background-color: var(--color-white);
+  background-color: var(--color-surface-container-lowest);
   width: 100%;
   max-width: 560px;
   max-height: 85vh;
@@ -19,6 +19,8 @@
   flex-direction: column;
   animation: slideUp 200ms ease;
   position: relative;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
 }
 
 .header {
@@ -36,14 +38,14 @@
   left: var(--space-6);
   right: var(--space-6);
   height: 1px;
-  background-color: var(--color-surface-2);
+  background-color: rgba(196, 198, 209, 0.15);
 }
 
 .title {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
-  font-weight: 700;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+  font-weight: 800;
   font-size: var(--text-xl);
-  color: var(--color-ink);
+  color: var(--color-primary);
 }
 
 .closeBtn {
@@ -53,19 +55,21 @@
   width: 32px;
   height: 32px;
   background: none;
+  border: none;
   cursor: pointer;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   transition: color var(--transition-fast);
   padding: 0;
   flex-shrink: 0;
+  border-radius: var(--radius-sm);
 }
 
 .closeBtn:hover {
-  color: var(--color-ink);
+  color: var(--color-on-surface);
 }
 
 .closeBtn:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
@@ -91,7 +95,7 @@
   left: var(--space-6);
   right: var(--space-6);
   height: 1px;
-  background-color: var(--color-surface-2);
+  background-color: rgba(196, 198, 209, 0.15);
 }
 
 @keyframes fadeIn {

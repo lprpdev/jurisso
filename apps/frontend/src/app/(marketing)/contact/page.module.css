@@ -1,35 +1,36 @@
 /* ───────────────────────────────────────────
    Contact — page.module.css
+   Atelier Legal Design System
    ─────────────────────────────────────────── */
 
 .page { min-height: 100vh; }
 
-.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-ink); }
-.navLogo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 900; color: #fff; text-decoration: none; }
+.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-primary); border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+.navLogo { font-family: var(--font-manrope); font-size: 1.5rem; font-weight: 900; color: var(--color-on-primary); text-decoration: none; }
 .navLinks { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
-.navLink { font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 500; color: var(--color-surface-2); text-decoration: none; }
+.navLink { font-family: var(--font-manrope); font-size: 0.875rem; font-weight: 500; color: var(--color-secondary-fixed-dim); text-decoration: none; }
 .navRight { display: flex; align-items: center; gap: 1.5rem; }
-.navLogin { font-family: var(--font-dm-sans); font-size: 0.875rem; color: var(--color-surface-2); text-decoration: none; }
-.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-accent); color: #fff; font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 600; text-decoration: none; }
+.navLogin { font-family: var(--font-manrope); font-size: 0.875rem; color: var(--color-secondary-fixed-dim); text-decoration: none; }
+.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-primary-container); color: var(--color-on-primary); font-family: var(--font-manrope); font-size: 0.875rem; font-weight: 600; text-decoration: none; border-radius: var(--radius-md); }
 
 .hero {
   padding: 5rem clamp(1.5rem,4vw,4rem) 3rem;
-  background-color: var(--color-ink);
+  background-color: var(--color-primary);
   text-align: center;
 }
 
 .heroTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: clamp(2rem,4vw,3rem);
   font-weight: 900;
-  color: #fff;
+  color: var(--color-on-primary);
   margin: 0 0 0.75rem;
 }
 
 .heroSubtitle {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 1rem;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
   margin: 0;
 }
 
@@ -57,33 +58,35 @@
 }
 
 .label {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
 }
 
 .input,
 .select,
 .textarea {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
-  color: var(--color-ink);
-  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-container);
   padding: 0.75rem 1rem;
   width: 100%;
+  border: 1px solid rgba(196, 198, 209, 0.15);
+  border-radius: var(--radius-sm);
 }
 
 .input:focus,
 .select:focus,
 .textarea:focus {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-primary);
   outline-offset: -2px;
 }
 
 .select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2343474f' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   padding-right: 2.5rem;
@@ -97,17 +100,19 @@
 .submit {
   align-self: flex-start;
   padding: 0.75rem 2rem;
-  background-color: var(--color-accent);
-  color: #fff;
-  font-family: var(--font-dm-sans);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.15s;
+  border-radius: var(--radius-md);
+  border: none;
+  transition: box-shadow 0.15s;
 }
 
 .submit:hover {
-  background-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-primary);
 }
 
 /* Side panel */
@@ -119,31 +124,32 @@
 
 .sideSection {
   padding: 1.5rem;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
+  border-radius: var(--radius-lg);
 }
 
 .sideTitle {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin: 0 0 0.75rem;
 }
 
 .sideText {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   line-height: 1.6;
   margin: 0 0 0.5rem;
 }
 
 .sideLink {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
 }
 

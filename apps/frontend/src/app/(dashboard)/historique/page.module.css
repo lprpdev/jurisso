@@ -1,5 +1,5 @@
 /* ============================================================
-   Search History Page
+   Search History Page — Atelier Legal
    ============================================================ */
 
 .header {
@@ -10,18 +10,27 @@
 }
 
 .title {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-primary, #00193c);
+  letter-spacing: -0.02em;
 }
 
 .clearAllBtn {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   color: var(--color-error);
   background: none;
   font-weight: 500;
+  border-radius: var(--radius-sm, 0.5rem);
+  padding: var(--space-1) var(--space-2);
+  transition: background-color 0.15s ease;
 }
 
 .clearAllBtn:hover {
-  color: var(--color-ink);
+  color: var(--color-on-surface, #1d1c17);
+  background-color: var(--color-surface-container, #f2ede5);
 }
 
 .list {
@@ -31,11 +40,18 @@
 }
 
 .historyItem {
-  background-color: var(--color-white);
+  background-color: var(--color-surface-container-lowest, #ffffff);
   padding: var(--space-4) var(--space-5);
   display: flex;
   align-items: center;
   gap: var(--space-4);
+  border-radius: var(--radius-lg, 2rem);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+.historyItem:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .historyContent {
@@ -44,9 +60,10 @@
 }
 
 .queryText {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
   font-weight: 500;
-  color: var(--color-ink);
+  color: var(--color-on-surface, #1d1c17);
   margin-bottom: var(--space-2);
 }
 
@@ -54,23 +71,26 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant, #43474f);
 }
 
 .filterBadge {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  padding: var(--space-1) var(--space-2);
-  background-color: var(--color-surface-2);
-  color: var(--color-ink-soft);
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-surface-container-high, #ece8e0);
+  color: var(--color-on-surface-variant, #43474f);
+  border-radius: var(--radius-full, 9999px);
 }
 
 .resultCount {
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant, #43474f);
 }
 
 .historyDate {
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant, #43474f);
 }
 
 .historyActions {
@@ -81,24 +101,33 @@
 }
 
 .relaunchLink {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-accent);
-  font-weight: 500;
+  color: var(--color-primary, #00193c);
+  font-weight: 600;
   text-decoration: none;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm, 0.5rem);
+  transition: background-color 0.15s ease;
 }
 
 .relaunchLink:hover {
-  color: var(--color-accent-dim);
+  background-color: var(--color-surface-container, #f2ede5);
 }
 
 .deleteBtn {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant, #43474f);
   background: none;
+  border-radius: var(--radius-sm, 0.5rem);
+  padding: var(--space-1) var(--space-2);
+  transition: background-color 0.15s ease;
 }
 
 .deleteBtn:hover {
   color: var(--color-error);
+  background-color: var(--color-surface-container, #f2ede5);
 }
 
 .emptyState {
@@ -107,13 +136,15 @@
 }
 
 .emptyTitle {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-2xl);
-  color: var(--color-ink);
+  font-weight: 800;
+  color: var(--color-primary, #00193c);
   margin-bottom: var(--space-3);
 }
 
 .emptyText {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant, #43474f);
 }

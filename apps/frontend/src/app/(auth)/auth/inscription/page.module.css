@@ -1,18 +1,19 @@
 /* ============================================================
-   Registration Page
+   Registration Page — Atelier Legal Design System
    ============================================================ */
 
 .heading {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-family: var(--font-manrope);
   font-size: var(--text-3xl);
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin-bottom: var(--space-2);
 }
 
 .subtitle {
+  font-family: var(--font-manrope);
   font-size: var(--text-base);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin-bottom: var(--space-8);
   line-height: var(--leading-relaxed);
 }
@@ -39,25 +40,26 @@
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-ink-soft);
+  color: var(--color-on-surface-variant);
   cursor: pointer;
   line-height: var(--leading-normal);
 }
 
 .checkboxLabel input[type='checkbox'] {
   margin-top: 3px;
-  accent-color: var(--color-accent);
+  accent-color: var(--color-primary);
   flex-shrink: 0;
 }
 
 .checkboxLabel a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: underline;
 }
 
 .checkboxLabel a:hover {
-  color: var(--color-accent-dim);
+  color: var(--color-primary-container);
 }
 
 .submitButton {
@@ -68,24 +70,27 @@
 .footer {
   text-align: center;
   margin-top: var(--space-6);
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
 }
 
 .footer a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-weight: 500;
 }
 
 .footer a:hover {
-  color: var(--color-accent-dim);
+  color: var(--color-primary-container);
 }
 
 .errorMessage {
   background-color: #fef2f2;
   color: var(--color-error);
   padding: var(--space-3) var(--space-4);
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
   line-height: var(--leading-normal);
+  border-radius: var(--radius-sm);
   animation: fadeIn var(--transition-base);
 }

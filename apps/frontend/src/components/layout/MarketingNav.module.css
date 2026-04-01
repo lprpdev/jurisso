@@ -6,24 +6,15 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--space-4) var(--space-8);
-  background-color: var(--color-ink);
-}
-
-.nav::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: var(--color-ink-soft);
+  background-color: var(--color-primary);
+  border-radius: 0;
 }
 
 .logo {
-  font-family: var(--font-display);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xl);
   font-weight: 900;
-  color: var(--color-white);
+  color: var(--color-on-primary);
   text-decoration: none;
   letter-spacing: 0.02em;
 }
@@ -38,16 +29,16 @@
 }
 
 .link {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--color-surface-2);
+  color: rgba(255, 255, 255, 0.65);
   text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out);
+  transition: color var(--transition-fast);
 }
 
 .link:hover {
-  color: var(--color-white);
+  color: var(--color-on-primary);
 }
 
 .right {
@@ -57,31 +48,33 @@
 }
 
 .login {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--color-surface-2);
+  color: rgba(255, 255, 255, 0.65);
   text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out);
+  transition: color var(--transition-fast);
 }
 
 .login:hover {
-  color: var(--color-white);
+  color: var(--color-on-primary);
 }
 
 .cta {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--color-white);
-  background-color: var(--color-accent);
+  color: var(--color-primary);
+  background-color: var(--color-on-primary);
   padding: var(--space-2) var(--space-4);
   text-decoration: none;
-  transition: background-color var(--duration-fast) var(--ease-out);
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  border-radius: var(--radius-md);
 }
 
 .cta:hover {
-  background-color: var(--color-accent-dim);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
 /* User dropdown */
@@ -94,22 +87,24 @@
   align-items: center;
   gap: var(--space-2);
   background: none;
+  border: none;
   cursor: pointer;
   padding: var(--space-1) var(--space-2);
-  color: var(--color-surface-2);
-  font-family: var(--font-body);
+  color: rgba(255, 255, 255, 0.65);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 500;
   outline: none;
+  border-radius: var(--radius-sm);
 }
 
 .userButton:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-on-primary);
   outline-offset: 2px;
 }
 
 .userButton:hover {
-  color: var(--color-white);
+  color: var(--color-on-primary);
 }
 
 .avatar {
@@ -118,12 +113,13 @@
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  font-family: var(--font-body);
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.05em;
+  border-radius: var(--radius-full);
 }
 
 .userName {
@@ -141,17 +137,11 @@
   top: calc(100% + var(--space-2));
   right: 0;
   min-width: 13rem;
-  background-color: var(--color-white);
+  background-color: var(--color-surface-container-lowest);
   z-index: var(--z-dropdown, 200);
   padding: var(--space-2) 0;
-}
-
-.dropdown::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  outline: 1px solid var(--color-surface-2);
-  pointer-events: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
 }
 
 .dropdownHeader {
@@ -162,39 +152,39 @@
 }
 
 .dropdownName {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--color-ink);
+  font-weight: 700;
+  color: var(--color-on-surface);
 }
 
 .dropdownPlan {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  font-weight: 500;
-  color: var(--color-accent);
+  font-weight: 600;
+  color: var(--color-primary);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
 .dropdownDivider {
   height: 1px;
-  background-color: var(--color-surface-2);
+  background-color: rgba(196, 198, 209, 0.15);
   margin: var(--space-1) 0;
 }
 
 .dropdownItem {
   display: block;
   padding: var(--space-2) var(--space-4);
-  font-family: var(--font-body);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   text-decoration: none;
-  transition: background-color var(--duration-fast) var(--ease-out);
+  transition: background-color var(--transition-fast);
 }
 
 .dropdownItem:hover {
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container-low);
 }
 
 .dropdownItemDanger {
@@ -202,15 +192,16 @@
   width: 100%;
   text-align: left;
   background: none;
+  border: none;
   cursor: pointer;
   padding: var(--space-2) var(--space-4);
-  font-family: var(--font-body);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   color: var(--color-error);
   text-decoration: none;
-  transition: background-color var(--duration-fast) var(--ease-out);
+  transition: background-color var(--transition-fast);
 }
 
 .dropdownItemDanger:hover {
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container-low);
 }

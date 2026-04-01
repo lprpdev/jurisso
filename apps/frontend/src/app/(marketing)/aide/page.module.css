@@ -1,3 +1,8 @@
+/* ───────────────────────────────────────────
+   Aide — page.module.css
+   Atelier Legal Design System
+   ─────────────────────────────────────────── */
+
 .container {
   max-width: 48rem;
   margin: 0 auto;
@@ -9,17 +14,17 @@
 }
 
 .heading {
-  font-family: var(--font-display);
+  font-family: var(--font-manrope);
   font-size: var(--text-4xl);
   font-weight: 900;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 var(--space-3);
 }
 
 .subtitle {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-lg);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin: 0;
 }
 
@@ -34,10 +39,10 @@
 }
 
 .sectionTitle {
-  font-family: var(--font-display);
+  font-family: var(--font-manrope);
   font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 var(--space-6);
 }
 
@@ -59,14 +64,15 @@
   left: 0;
   right: 0;
   height: 1px;
-  background-color: var(--color-surface-2);
+  background-color: var(--color-outline-variant);
+  opacity: 0.15;
 }
 
 .question {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-base);
   font-weight: 600;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -81,7 +87,7 @@
 .question::after {
   content: '+';
   font-size: var(--text-xl);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   transition: transform var(--duration-fast) var(--ease-out);
 }
 
@@ -90,9 +96,9 @@
 }
 
 .answer {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: 1.7;
   margin: var(--space-3) 0 0;
   padding-right: var(--space-8);
@@ -112,21 +118,22 @@
   left: 0;
   right: 0;
   height: 1px;
-  background-color: var(--color-surface-2);
+  background-color: var(--color-outline-variant);
+  opacity: 0.15;
 }
 
 .footerText {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-base);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin: 0 0 var(--space-4);
 }
 
 .footerLink {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-base);
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
 }
 

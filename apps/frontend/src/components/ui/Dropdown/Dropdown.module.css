@@ -12,8 +12,9 @@
   top: calc(100% + var(--space-1));
   right: 0;
   min-width: 180px;
-  background-color: var(--color-white);
-  outline: 1px solid var(--color-surface-2);
+  background-color: var(--color-surface-container-lowest);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
   z-index: var(--z-dropdown);
   animation: slideDown 150ms ease;
   padding: var(--space-1) 0;
@@ -26,8 +27,9 @@
   width: 100%;
   padding: var(--space-2) var(--space-4);
   font-size: var(--text-sm);
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   background: none;
+  border: none;
   cursor: pointer;
   text-align: left;
   transition: background-color var(--transition-fast);
@@ -35,11 +37,11 @@
 
 .item:hover,
 .item:focus-visible {
-  background-color: var(--color-surface-2);
+  background-color: var(--color-surface-container-low);
 }
 
 .item:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-primary);
   outline-offset: -2px;
 }
 
@@ -47,7 +49,7 @@
   display: inline-flex;
   width: 16px;
   height: 16px;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   flex-shrink: 0;
 }
 

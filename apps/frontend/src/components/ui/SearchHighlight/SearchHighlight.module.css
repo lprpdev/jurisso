@@ -1,5 +1,7 @@
 .highlight {
-  background-color: rgba(26, 60, 255, 0.15);
-  color: inherit;
+  background-color: var(--color-secondary-fixed-dim);
+  color: var(--color-on-secondary-fixed);
   font-weight: 600;
+  border-radius: 2px;
+  padding: 0 2px;
 }

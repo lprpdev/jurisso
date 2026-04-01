@@ -11,19 +11,21 @@
   font-family: var(--font-jetbrains), 'JetBrains Mono', monospace;
   font-size: var(--text-2xl);
   font-weight: 400;
-  color: var(--color-ink);
-  background-color: var(--color-white);
-  outline: 2px solid var(--color-surface-2);
-  transition: outline-color var(--transition-fast);
-  caret-color: var(--color-accent);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-container-low);
+  border: none;
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: box-shadow var(--transition-fast);
+  caret-color: var(--color-primary);
 }
 
 .input:focus {
-  outline: 2px solid var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(var(--color-surface-tint-rgb, 0, 25, 60), 0.4);
 }
 
 .input::placeholder {
-  color: var(--color-surface-2);
+  color: var(--color-surface-container-high);
 }
 
 .input:disabled {

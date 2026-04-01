@@ -1,5 +1,5 @@
 /* ============================================================
-   Collections Page
+   Collections Page — Atelier Legal
    ============================================================ */
 
 .header {
@@ -10,22 +10,31 @@
 }
 
 .title {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-primary, #00193c);
+  letter-spacing: -0.02em;
 }
 
 .newBtn {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-2) var(--space-5);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  font-weight: 500;
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  font-weight: 600;
+  background-color: var(--color-primary, #00193c);
+  color: var(--color-on-primary, #ffffff);
+  border: none;
+  border-radius: var(--radius-full, 9999px);
+  box-shadow: var(--shadow-primary);
+  transition: opacity 0.15s ease;
 }
 
 .newBtn:hover {
-  background-color: var(--color-accent-dim);
+  opacity: 0.85;
 }
 
 .grid {
@@ -35,16 +44,19 @@
 }
 
 .card {
-  background-color: var(--color-white);
+  background-color: var(--color-surface-container-lowest, #ffffff);
   padding: var(--space-5);
   display: block;
   text-decoration: none;
-  color: var(--color-ink);
-  transition: background-color var(--transition-fast);
+  color: var(--color-on-surface, #1d1c17);
+  border-radius: var(--radius-lg, 2rem);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  background-color: var(--color-surface);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .cardHeader {
@@ -58,18 +70,20 @@
   width: 10px;
   height: 10px;
   flex-shrink: 0;
-  clip-path: circle(50%);
+  border-radius: var(--radius-full, 9999px);
 }
 
 .cardName {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-lg);
   font-weight: 700;
+  color: var(--color-primary, #00193c);
 }
 
 .cardDescription {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant, #43474f);
   line-height: var(--leading-normal);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -81,8 +95,9 @@
 .cardFooter {
   display: flex;
   justify-content: space-between;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant, #43474f);
 }
 
 .cardActions {
@@ -92,14 +107,16 @@
 }
 
 .cardAction {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-accent);
+  color: var(--color-primary, #00193c);
   background: none;
   padding: 0;
+  font-weight: 500;
 }
 
 .cardAction:hover {
-  color: var(--color-accent-dim);
+  opacity: 0.7;
 }
 
 .cardActionDanger {
@@ -107,7 +124,8 @@
 }
 
 .cardActionDanger:hover {
-  color: var(--color-ink);
+  color: var(--color-on-surface, #1d1c17);
+  opacity: 1;
 }
 
 .emptyState {
@@ -116,15 +134,17 @@
 }
 
 .emptyTitle {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-2xl);
-  color: var(--color-ink);
+  font-weight: 800;
+  color: var(--color-primary, #00193c);
   margin-bottom: var(--space-3);
 }
 
 .emptyText {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant, #43474f);
 }
 
 @media (max-width: 1024px) {

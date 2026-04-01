@@ -1,10 +1,15 @@
 /* ============================================================
-   Settings Page — NO notifications, NO email change
+   Settings Page — Atelier Legal
+   NO notifications, NO email change
    ============================================================ */
 
 .title {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-3xl);
+  font-weight: 800;
+  color: var(--color-primary, #00193c);
   margin-bottom: var(--space-8);
+  letter-spacing: -0.02em;
 }
 
 .sections {
@@ -15,15 +20,17 @@
 }
 
 .section {
-  background-color: var(--color-white);
+  background-color: var(--color-surface-container-lowest, #ffffff);
   padding: var(--space-6);
+  border-radius: var(--radius-lg, 2rem);
+  box-shadow: var(--shadow-sm);
 }
 
 .sectionTitle {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-primary, #00193c);
   margin-bottom: var(--space-5);
 }
 
@@ -31,7 +38,8 @@
   content: '';
   display: block;
   height: 1px;
-  background-color: var(--color-surface-2);
+  background-color: var(--color-outline-variant, #c4c6d1);
+  opacity: 0.3;
   margin-top: var(--space-3);
 }
 
@@ -42,9 +50,10 @@
 }
 
 .fieldLabel {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--color-ink);
+  color: var(--color-on-surface, #1d1c17);
   margin-bottom: var(--space-1);
 }
 
@@ -52,44 +61,55 @@
   width: 100%;
   height: 40px;
   padding: 0 var(--space-3);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  background-color: var(--color-surface);
-  color: var(--color-ink);
+  background-color: var(--color-surface-container, #f2ede5);
+  color: var(--color-on-surface, #1d1c17);
+  border: none;
+  border-radius: var(--radius-md, 1rem);
 }
 
 .selectField:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-primary, #00193c);
   outline-offset: -2px;
 }
 
 /* ----- RGPD Export ----- */
 .exportDescription {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant, #43474f);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-4);
 }
 
 .exportBtn {
   padding: var(--space-2) var(--space-5);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  font-weight: 500;
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  font-weight: 600;
+  background-color: var(--color-primary, #00193c);
+  color: var(--color-on-primary, #ffffff);
+  border: none;
+  border-radius: var(--radius-full, 9999px);
+  box-shadow: var(--shadow-primary);
   align-self: flex-start;
+  transition: opacity 0.15s ease;
 }
 
 .exportBtn:hover {
-  background-color: var(--color-accent-dim);
+  opacity: 0.85;
 }
 
 .exportBtn:disabled {
-  background-color: var(--color-surface-2);
-  color: var(--color-muted);
+  background-color: var(--color-surface-container-high, #ece8e0);
+  color: var(--color-on-surface-variant, #43474f);
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .successMessage {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   color: var(--color-success);
   margin-top: var(--space-2);
@@ -106,18 +126,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-3) 0;
+  padding: var(--space-3);
   position: relative;
+  border-radius: var(--radius-md, 1rem);
+  transition: background-color 0.15s ease;
+}
+
+.sessionItem:hover {
+  background-color: var(--color-surface-container, #f2ede5);
 }
 
 .sessionItem::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: var(--color-surface-2);
+  display: none;
 }
 
 .sessionItem:last-child::after {
@@ -131,34 +151,41 @@
 }
 
 .sessionDevice {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--color-ink);
+  color: var(--color-on-surface, #1d1c17);
 }
 
 .sessionMeta {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant, #43474f);
 }
 
 .sessionCurrent {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
   font-weight: 600;
   color: var(--color-success);
 }
 
 .revokeBtn {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   color: var(--color-error);
   background: none;
+  border-radius: var(--radius-sm, 0.5rem);
+  padding: var(--space-1) var(--space-2);
 }
 
 .revokeBtn:hover {
-  color: var(--color-ink);
+  color: var(--color-on-surface, #1d1c17);
 }
 
 .revokeAllBtn {
   margin-top: var(--space-3);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   color: var(--color-error);
   background: none;
@@ -166,28 +193,30 @@
 }
 
 .revokeAllBtn:hover {
-  color: var(--color-ink);
+  color: var(--color-on-surface, #1d1c17);
 }
 
 /* ----- Feedback ----- */
 .feedbackText {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant, #43474f);
   line-height: var(--leading-relaxed);
 }
 
 .feedbackText a {
-  color: var(--color-accent);
-  font-weight: 500;
+  color: var(--color-primary, #00193c);
+  font-weight: 600;
 }
 
 /* ----- Delete Account Redirect ----- */
 .redirectLink {
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   color: var(--color-error);
   font-weight: 500;
 }
 
 .redirectLink:hover {
-  color: var(--color-ink);
+  color: var(--color-on-surface, #1d1c17);
 }

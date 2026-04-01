@@ -1,14 +1,15 @@
 /* ───────────────────────────────────────────
    Legal Layout — layout.module.css
+   Atelier Legal Design System
    ─────────────────────────────────────────── */
 
-.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-ink); }
-.navLogo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 900; color: #fff; text-decoration: none; }
+.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-primary); border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+.navLogo { font-family: var(--font-manrope); font-size: 1.5rem; font-weight: 900; color: var(--color-on-primary); text-decoration: none; }
 .navLinks { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
-.navLink { font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 500; color: var(--color-surface-2); text-decoration: none; }
+.navLink { font-family: var(--font-manrope); font-size: 0.875rem; font-weight: 500; color: var(--color-secondary-fixed-dim); text-decoration: none; }
 .navRight { display: flex; align-items: center; gap: 1.5rem; }
-.navLogin { font-family: var(--font-dm-sans); font-size: 0.875rem; color: var(--color-surface-2); text-decoration: none; }
-.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-accent); color: #fff; font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 600; text-decoration: none; }
+.navLogin { font-family: var(--font-manrope); font-size: 0.875rem; color: var(--color-secondary-fixed-dim); text-decoration: none; }
+.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-primary-container); color: var(--color-on-primary); font-family: var(--font-manrope); font-size: 0.875rem; font-weight: 600; text-decoration: none; border-radius: var(--radius-md); }
 
 .layout {
   display: grid;
@@ -27,12 +28,12 @@
 }
 
 .sidebarTitle {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin: 0 0 1rem;
 }
 
@@ -44,17 +45,19 @@
 
 .sidebarLink {
   display: block;
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.8125rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   text-decoration: none;
   padding: 0.4rem 0.75rem;
   position: relative;
   transition: color 0.15s;
+  border-radius: var(--radius-sm);
 }
 
 .sidebarLink:hover {
-  color: var(--color-ink);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-container);
 }
 
 .sidebarLink::before {
@@ -64,7 +67,9 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background-color: var(--color-surface);
+  background-color: var(--color-outline-variant);
+  opacity: 0.15;
+  border-radius: var(--radius-full);
 }
 
 .content {

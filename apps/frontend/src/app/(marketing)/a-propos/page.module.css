@@ -1,37 +1,38 @@
 /* ───────────────────────────────────────────
    A propos — page.module.css
+   Atelier Legal Design System
    ─────────────────────────────────────────── */
 
 .page { min-height: 100vh; }
 
-.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-ink); }
-.navLogo { font-family: var(--font-playfair); font-size: 1.5rem; font-weight: 900; color: #fff; text-decoration: none; }
+.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(1.5rem,4vw,4rem); height: 4rem; background-color: var(--color-primary); border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+.navLogo { font-family: var(--font-manrope); font-size: 1.5rem; font-weight: 900; color: var(--color-on-primary); text-decoration: none; }
 .navLinks { display: flex; align-items: center; gap: 2rem; list-style: none; margin: 0; padding: 0; }
-.navLink { font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 500; color: var(--color-surface-2); text-decoration: none; }
+.navLink { font-family: var(--font-manrope); font-size: 0.875rem; font-weight: 500; color: var(--color-secondary-fixed-dim); text-decoration: none; }
 .navRight { display: flex; align-items: center; gap: 1.5rem; }
-.navLogin { font-family: var(--font-dm-sans); font-size: 0.875rem; color: var(--color-surface-2); text-decoration: none; }
-.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-accent); color: #fff; font-family: var(--font-dm-sans); font-size: 0.875rem; font-weight: 600; text-decoration: none; }
+.navLogin { font-family: var(--font-manrope); font-size: 0.875rem; color: var(--color-secondary-fixed-dim); text-decoration: none; }
+.navCta { display: inline-block; padding: 0.5rem 1.25rem; background-color: var(--color-primary-container); color: var(--color-on-primary); font-family: var(--font-manrope); font-size: 0.875rem; font-weight: 600; text-decoration: none; border-radius: var(--radius-md); }
 
 /* Hero */
 .hero {
   padding: 6rem clamp(1.5rem,4vw,4rem) 4rem;
-  background-color: var(--color-ink);
+  background-color: var(--color-primary);
   text-align: center;
 }
 
 .heroTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: clamp(2rem,4vw,3rem);
   font-weight: 900;
-  color: #fff;
+  color: var(--color-on-primary);
   margin: 0 0 1rem;
 }
 
 .heroSubtitle {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 1.125rem;
   font-weight: 300;
-  color: var(--color-surface-2);
+  color: var(--color-secondary-fixed-dim);
   max-width: 36rem;
   margin: 0 auto;
   line-height: 1.7;
@@ -40,7 +41,7 @@
 /* Mission */
 .mission {
   padding: 5rem clamp(1.5rem,4vw,4rem);
-  background-color: #fff;
+  background-color: var(--color-background);
 }
 
 .missionInner {
@@ -50,17 +51,17 @@
 }
 
 .missionTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 1.5rem;
 }
 
 .missionText {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 1rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: 1.8;
   margin: 0 0 1rem;
 }
@@ -68,14 +69,14 @@
 /* Values */
 .values {
   padding: 5rem clamp(1.5rem,4vw,4rem);
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
 }
 
 .sectionTitle {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   text-align: center;
   margin: 0 0 3rem;
 }
@@ -90,29 +91,31 @@
 
 .valueCard {
   padding: 2rem;
-  background-color: #fff;
+  background-color: var(--color-surface-container-lowest);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
   text-align: center;
 }
 
 .valueIcon {
   width: 2.5rem;
   height: 2.5rem;
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin: 0 auto 1rem;
 }
 
 .valueTitle {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 0.5rem;
 }
 
 .valueDesc {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.875rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: 1.6;
   margin: 0;
 }
@@ -120,7 +123,7 @@
 /* Team */
 .team {
   padding: 5rem clamp(1.5rem,4vw,4rem);
-  background-color: #fff;
+  background-color: var(--color-background);
 }
 
 .teamGrid {
@@ -134,12 +137,15 @@
 .teamCard {
   text-align: center;
   padding: 2rem 1rem;
+  background-color: var(--color-surface-container-lowest);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 .teamAvatar {
   width: 5rem;
   height: 5rem;
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
   margin: 0 auto 1rem;
   display: flex;
   align-items: center;
@@ -150,28 +156,28 @@
 .teamAvatarIcon {
   width: 2.5rem;
   height: 2.5rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
 }
 
 .teamName {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 0.25rem;
 }
 
 .teamRole {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.8125rem;
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin: 0 0 0.75rem;
 }
 
 .teamBio {
-  font-family: var(--font-dm-sans);
+  font-family: var(--font-manrope);
   font-size: 0.8125rem;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: 1.6;
   margin: 0;
 }
@@ -179,7 +185,7 @@
 /* Press */
 .press {
   padding: 5rem clamp(1.5rem,4vw,4rem);
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
 }
 
 .pressLogos {
@@ -192,10 +198,10 @@
 }
 
 .pressLogo {
-  font-family: var(--font-playfair);
+  font-family: var(--font-manrope);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   opacity: 0.5;
 }
 

@@ -1,23 +1,61 @@
 /* ============================================================
-   JURISSO — Global Styles
-   No border, border-radius, box-shadow, text-shadow, or gradients.
+   JURISSO — Atelier Legal Design System
+   Warm, curated, editorial. No hard borders. Tonal layering.
    ============================================================ */
 
-/* ----- Custom Properties ----- */
 :root {
-  --color-ink: #0a0a0f;
-  --color-ink-soft: #1c1c28;
-  --color-surface: #f7f7fa;
-  --color-surface-2: #ededf2;
-  --color-accent: #1a3cff;
-  --color-accent-dim: #0f24b3;
-  --color-muted: #6b6b80;
+  /* Atelier palette */
+  --color-background: #fef9f1;
+  --color-surface: #fef9f1;
+  --color-surface-container: #f2ede5;
+  --color-surface-container-low: #f8f3eb;
+  --color-surface-container-high: #ece8e0;
+  --color-surface-container-highest: #e7e2da;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-dim: #ded9d2;
+  --color-surface-bright: #fef9f1;
+  --color-surface-variant: #e7e2da;
+
+  --color-primary: #00193c;
+  --color-primary-container: #002d62;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #7796d1;
+  --color-primary-fixed: #d7e2ff;
+  --color-primary-fixed-dim: #abc7ff;
+  --color-inverse-primary: #abc7ff;
+
+  --color-secondary: #635d58;
+  --color-secondary-container: #eae1da;
+  --color-secondary-fixed: #eae1da;
+  --color-secondary-fixed-dim: #cdc5be;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-fixed: #1f1b17;
+
+  --color-tertiary: #330e00;
+  --color-tertiary-container: #541d02;
+  --color-tertiary-fixed: #ffdbcd;
+  --color-tertiary-fixed-dim: #ffb597;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #d4815d;
+
+  --color-on-surface: #1d1c17;
+  --color-on-surface-variant: #43474f;
+  --color-on-background: #1d1c17;
+  --color-inverse-surface: #32302b;
+  --color-inverse-on-surface: #f5f0e8;
+
+  --color-outline: #747781;
+  --color-outline-variant: #c4c6d1;
+  --color-surface-tint: #3e5e95;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
   --color-success: #00875a;
   --color-warning: #b45309;
-  --color-error: #c0392b;
-  --color-white: #ffffff;
 
-  /* Spacing scale (4px base) */
+  /* Spacing */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -31,7 +69,13 @@
   --space-20: 5rem;
   --space-24: 6rem;
 
-  /* Type scale */
+  /* Typography scale */
+  --text-display-lg: 3.5rem;
+  --text-headline-md: 1.75rem;
+  --text-title-sm: 1rem;
+  --text-body-md: 0.875rem;
+  --text-label-sm: 0.6875rem;
+
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -43,27 +87,52 @@
   --text-5xl: 3rem;
   --text-6xl: 3.75rem;
 
-  /* Line heights */
-  --leading-tight: 1.15;
-  --leading-snug: 1.3;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.65;
+  /* Border radius — Atelier style */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
 
-  /* Transition */
-  --transition-fast: 120ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 350ms ease;
+  /* Ambient shadows — tinted, never pure black */
+  --shadow-sm: 0px 4px 12px rgba(29, 28, 23, 0.04);
+  --shadow-md: 0px 12px 24px rgba(29, 28, 23, 0.05);
+  --shadow-lg: 0px 24px 48px rgba(29, 28, 23, 0.06);
+  --shadow-primary: 0px 12px 32px rgba(0, 25, 60, 0.2);
 
-  /* Z-index layers */
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Z-index */
   --z-dropdown: 100;
   --z-sticky: 200;
   --z-overlay: 300;
   --z-modal: 400;
   --z-toast: 500;
   --z-tooltip: 600;
+
+  /* Legacy compat aliases */
+  --font-display: var(--font-manrope);
+  --font-body: var(--font-manrope);
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-ink: var(--color-primary);
+  --color-ink-soft: var(--color-primary-container);
+  --color-accent: var(--color-primary);
+  --color-accent-dim: var(--color-primary-container);
+  --color-muted: var(--color-on-surface-variant);
+  --color-white: #ffffff;
+  --color-surface-2: var(--color-surface-container-high);
+
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.87, 0, 0.13, 1);
 }
 
-/* ----- CSS Reset ----- */
+/* Reset */
 *,
 *::before,
 *::after {
@@ -76,49 +145,56 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-size-adjust: 100%;
-  tab-size: 4;
-  line-height: var(--leading-normal);
+  line-height: 1.5;
   font-size: 16px;
 }
 
 body {
-  font-family: var(--font-dm-sans), 'DM Sans', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-manrope), 'Manrope', system-ui, -apple-system, sans-serif;
   font-weight: 400;
-  color: var(--color-ink);
-  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  background-color: var(--color-background);
   min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: rgba(0, 25, 60, 0.1);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
-  font-weight: 700;
-  line-height: var(--leading-tight);
-  color: var(--color-ink);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
 }
 
-h1 { font-size: var(--text-5xl); }
-h2 { font-size: var(--text-4xl); }
-h3 { font-size: var(--text-3xl); }
-h4 { font-size: var(--text-2xl); }
-h5 { font-size: var(--text-xl); }
-h6 { font-size: var(--text-lg); }
+h1 { font-size: var(--text-display-lg); }
+h2 { font-size: var(--text-headline-md); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+h5 { font-size: var(--text-base); }
+h6 { font-size: var(--text-sm); }
 
 p {
-  line-height: var(--leading-relaxed);
+  line-height: 1.6;
+  color: var(--color-on-surface-variant);
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
 }
 
 a:hover {
-  color: var(--color-accent-dim);
+  text-decoration: underline;
 }
 
 a:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-surface-tint);
   outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 
 img, svg, video, canvas {
@@ -129,6 +205,8 @@ img, svg, video, canvas {
 button, input, select, textarea {
   font: inherit;
   color: inherit;
+  border: none;
+  outline: none;
 }
 
 button {
@@ -144,9 +222,8 @@ table {
   border-collapse: collapse;
 }
 
-/* ----- Focus Visible ----- */
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-surface-tint);
   outline-offset: 2px;
 }
 
@@ -154,35 +231,25 @@ table {
   outline: none;
 }
 
-/* ----- Selection ----- */
-::selection {
-  background-color: var(--color-accent);
-  color: var(--color-white);
-}
-
-/* ----- Scrollbar (Webkit) ----- */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--color-surface);
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-surface-2);
+  background-color: var(--color-outline-variant);
+  border-radius: var(--radius-full);
 }
 
-/* ----- Animations ----- */
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
 }
 
 @keyframes slideUp {
@@ -200,11 +267,6 @@ table {
   to { transform: translateX(0); opacity: 1; }
 }
 
-@keyframes slideOutRight {
-  from { transform: translateX(0); opacity: 1; }
-  to { transform: translateX(100%); opacity: 0; }
-}
-
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
@@ -215,7 +277,6 @@ table {
   to { transform: rotate(360deg); }
 }
 
-/* ----- Reduced Motion ----- */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

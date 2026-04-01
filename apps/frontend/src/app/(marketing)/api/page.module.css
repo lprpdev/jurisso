@@ -1,3 +1,8 @@
+/* ───────────────────────────────────────────
+   API — page.module.css
+   Atelier Legal Design System
+   ─────────────────────────────────────────── */
+
 .layout {
   display: flex;
   max-width: 72rem;
@@ -21,26 +26,26 @@
 }
 
 .tocTitle {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-xs);
   font-weight: 700;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: var(--space-2);
 }
 
 .tocLink {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   text-decoration: none;
   padding: var(--space-1) 0;
   transition: color var(--duration-fast) var(--ease-out);
 }
 
 .tocLink:hover {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .main {
@@ -49,23 +54,23 @@
 }
 
 .heading {
-  font-family: var(--font-display);
+  font-family: var(--font-manrope);
   font-size: var(--text-4xl);
   font-weight: 900;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 var(--space-4);
 }
 
 .intro {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-lg);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: 1.7;
   margin: 0 0 var(--space-12);
 }
 
 .inlineLink {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
   font-weight: 600;
 }
@@ -79,10 +84,10 @@
 }
 
 .infoTitle {
-  font-family: var(--font-display);
+  font-family: var(--font-manrope);
   font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 var(--space-6);
 }
 
@@ -97,14 +102,15 @@
   flex-direction: column;
   gap: var(--space-1);
   padding: var(--space-4);
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
+  border-radius: var(--radius-sm);
 }
 
 .infoLabel {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-xs);
   font-weight: 700;
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -112,13 +118,13 @@
 .code {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  color: var(--color-ink);
+  color: var(--color-on-surface);
 }
 
 .paragraph {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: 1.7;
   margin: 0 0 var(--space-4);
 }
@@ -126,12 +132,13 @@
 .codeBlock {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  color: var(--color-surface);
-  background-color: var(--color-ink);
+  color: var(--color-surface-container);
+  background-color: var(--color-primary);
   padding: var(--space-6);
   overflow-x: auto;
   line-height: 1.6;
   margin: 0 0 var(--space-6);
+  border-radius: var(--radius-md);
 }
 
 .endpointSection {
@@ -147,21 +154,22 @@
   left: 0;
   right: 0;
   height: 1px;
-  background-color: var(--color-surface-2);
+  background-color: var(--color-outline-variant);
+  opacity: 0.15;
 }
 
 .sectionTitle {
-  font-family: var(--font-display);
+  font-family: var(--font-manrope);
   font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin: 0 0 var(--space-2);
 }
 
 .sectionDesc {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin: 0 0 var(--space-6);
 }
 
@@ -173,7 +181,8 @@
 
 .endpoint {
   padding: var(--space-4);
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
+  border-radius: var(--radius-sm);
 }
 
 .endpointHeader {
@@ -195,24 +204,25 @@
 .path {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
-  color: var(--color-ink);
+  color: var(--color-on-surface);
 }
 
 .authBadge {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: 0.625rem;
   font-weight: 700;
-  color: var(--color-accent);
-  background-color: rgba(26, 60, 255, 0.1);
+  color: var(--color-primary);
+  background-color: rgba(0, 25, 60, 0.08);
   padding: 0.125rem 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  border-radius: var(--radius-sm);
 }
 
 .endpointDesc {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin: 0;
   padding-left: calc(4rem + var(--space-3));
 }
@@ -228,21 +238,22 @@
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-3) var(--space-4);
-  background-color: var(--color-surface);
+  background-color: var(--color-surface-container);
+  border-radius: var(--radius-sm);
 }
 
 .codeInline {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   min-width: 2.5rem;
 }
 
 .httpDesc {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
 }
 
 @media (max-width: 768px) {

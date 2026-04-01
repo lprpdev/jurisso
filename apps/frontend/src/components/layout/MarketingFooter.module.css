@@ -1,17 +1,7 @@
 .footer {
-  background-color: var(--color-ink);
+  background-color: var(--color-primary);
   padding: var(--space-16) var(--space-8) var(--space-8);
   position: relative;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: var(--color-ink-soft);
 }
 
 .grid {
@@ -23,10 +13,10 @@
 }
 
 .heading {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  font-weight: 700;
-  color: var(--color-white);
+  font-weight: 800;
+  color: var(--color-on-primary);
   margin: 0 0 var(--space-4);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -42,15 +32,15 @@
 }
 
 .link {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out);
+  transition: color var(--transition-fast);
 }
 
 .link:hover {
-  color: var(--color-surface-2);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .bottom {
@@ -67,13 +57,13 @@
   left: 0;
   right: 0;
   height: 1px;
-  background-color: var(--color-ink-soft);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .copy {
-  font-family: var(--font-body);
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-muted);
+  color: rgba(255, 255, 255, 0.4);
   margin: 0;
 }
 

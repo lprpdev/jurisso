@@ -8,21 +8,21 @@
 }
 
 .icon {
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin-bottom: var(--space-5);
 }
 
 .title {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
-  font-weight: 700;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+  font-weight: 800;
   font-size: var(--text-xl);
-  color: var(--color-ink);
+  color: var(--color-primary);
   margin-bottom: var(--space-2);
 }
 
 .description {
   font-size: var(--text-base);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   max-width: 400px;
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-6);
@@ -33,20 +33,23 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-2) var(--space-5);
-  font-family: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
-  font-weight: 500;
+  font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
+  font-weight: 600;
   font-size: var(--text-base);
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
   text-decoration: none;
-  transition: background-color var(--transition-fast);
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  border-radius: var(--radius-md);
+  border: none;
 }
 
 .action:hover {
-  background-color: var(--color-accent-dim);
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-1px);
 }
 
 .action:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }

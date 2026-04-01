@@ -1,5 +1,5 @@
 /* ============================================================
-   Email Verified Success Page
+   Email Verified Success Page — Atelier Legal Design System
    ============================================================ */
 
 .container {
@@ -15,16 +15,17 @@
 }
 
 .heading {
-  font-family: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  font-family: var(--font-manrope);
   font-size: var(--text-3xl);
   font-weight: 700;
-  color: var(--color-ink);
+  color: var(--color-on-surface);
   margin-bottom: var(--space-3);
 }
 
 .description {
+  font-family: var(--font-manrope);
   font-size: var(--text-base);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   line-height: var(--leading-relaxed);
   max-width: 380px;
   margin-left: auto;
@@ -32,8 +33,9 @@
 }
 
 .redirectNote {
+  font-family: var(--font-manrope);
   font-size: var(--text-sm);
-  color: var(--color-muted);
+  color: var(--color-on-surface-variant);
   margin-top: var(--space-6);
   font-style: italic;
 }

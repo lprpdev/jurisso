@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { playfairDisplay, dmSans } from '@/lib/fonts';
+import { manrope } from '@/lib/fonts';
 import '@/styles/globals.css';
 import '@/styles/typography.css';
 
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'JURISSO',
     title: 'JURISSO — Recherche juridique intelligente',
     description:
-      'Accédez à 3,2 millions de décisions de justice et 450 000 textes législatifs. Recherche instantanée, alertes intelligentes, annotations collaboratives.',
+      'Accédez à 3,2 millions de décisions de justice et 450 000 textes législatifs.',
   },
   twitter: {
     card: 'summary_large_image',
@@ -35,9 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body
-        className={`${playfairDisplay.variable} ${dmSans.variable}`}
-      >
+      <body className={manrope.variable}>
         {children}
       </body>
     </html>
