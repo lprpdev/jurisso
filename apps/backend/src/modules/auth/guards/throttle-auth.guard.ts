@@ -1,5 +1,5 @@
 import { Injectable, ExecutionContext } from '@nestjs/common';
-import { ThrottlerGuard, ThrottlerException } from '@nestjs/throttler';
+import { ThrottlerGuard, ThrottlerException, ThrottlerRequest } from '@nestjs/throttler';
 import { CacheService } from '../../cache/cache.service';
 
 @Injectable()
@@ -8,11 +8,8 @@ export class ThrottleAuthGuard extends ThrottlerGuard {
     super([] as any, {} as any, {} as any);
   }
 
-  async handleRequest(
-    context: ExecutionContext,
-    limit: number,
-    ttl: number,
-  ): Promise<boolean> {
+  async handleRequest(requestProps: ThrottlerRequest): Promise<boolean> {
+    const { context, limit, ttl } = requestProps;
     const request = context.switchToHttp().getRequest();
     const ip = request.ip || '0.0.0.0';
     const key = `throttle:auth:${ip}`;

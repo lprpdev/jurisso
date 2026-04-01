@@ -92,7 +92,7 @@ export class DocumentsService {
       });
 
       if (existing) {
-        await this.documentRepo.update(existing.id, docData);
+        await this.documentRepo.update(existing.id, docData as any);
         updated++;
       } else {
         const newDoc = this.documentRepo.create(docData);
