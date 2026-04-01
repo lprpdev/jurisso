@@ -11,20 +11,6 @@ export const metadata: Metadata = {
 export default function TarifsPage() {
   return (
     <div className={styles.page}>
-      {/* Nav */}
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.navLogo}>JURISSO</Link>
-        <ul className={styles.navLinks}>
-          <li><Link href="/fonctionnalites" className={styles.navLink}>Fonctionnalites</Link></li>
-          <li><Link href="/tarifs" className={styles.navLink}>Tarifs</Link></li>
-          <li><Link href="/a-propos" className={styles.navLink}>A propos</Link></li>
-          <li><Link href="/blog" className={styles.navLink}>Blog</Link></li>
-        </ul>
-        <div className={styles.navRight}>
-          <Link href="/auth/connexion" className={styles.navLogin}>Connexion</Link>
-          <Link href="/auth/inscription" className={styles.navCta}>Essai gratuit</Link>
-        </div>
-      </nav>
 
       {/* Hero */}
       <section className={styles.hero}>
@@ -263,48 +249,6 @@ export default function TarifsPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.footerGrid}>
-          <div>
-            <h4 className={styles.footerHeading}>Produit</h4>
-            <ul className={styles.footerLinks}>
-              <li><Link href="/fonctionnalites" className={styles.footerLink}>Fonctionnalites</Link></li>
-              <li><Link href="/tarifs" className={styles.footerLink}>Tarifs</Link></li>
-              <li><Link href="/demo" className={styles.footerLink}>Demo</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className={styles.footerHeading}>Ressources</h4>
-            <ul className={styles.footerLinks}>
-              <li><Link href="/blog" className={styles.footerLink}>Blog</Link></li>
-              <li><Link href="/documentation" className={styles.footerLink}>Documentation</Link></li>
-              <li><Link href="/api" className={styles.footerLink}>API</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className={styles.footerHeading}>Legal</h4>
-            <ul className={styles.footerLinks}>
-              <li><Link href="/legal/mentions-legales" className={styles.footerLink}>Mentions legales</Link></li>
-              <li><Link href="/legal/politique-confidentialite" className={styles.footerLink}>Confidentialite</Link></li>
-              <li><Link href="/legal/conditions-generales-utilisation" className={styles.footerLink}>CGU</Link></li>
-              <li><Link href="/legal/conditions-generales-vente" className={styles.footerLink}>CGV</Link></li>
-              <li><Link href="/legal/cookies" className={styles.footerLink}>Cookies</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className={styles.footerHeading}>Contact</h4>
-            <ul className={styles.footerLinks}>
-              <li><a href="mailto:contact@jurisso.fr" className={styles.footerLink}>contact@jurisso.fr</a></li>
-              <li><span className={styles.footerLink}>Paris, France</span></li>
-            </ul>
-          </div>
-        </div>
-        <div className={styles.footerBottom}>
-          <p className={styles.footerCopy}>&copy; 2025 JURISSO SAS. Tous droits reserves.</p>
-        </div>
-      </footer>
     </div>
   );
 }

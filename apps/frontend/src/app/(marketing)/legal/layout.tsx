@@ -16,20 +16,6 @@ export default function LegalLayout({
 }) {
   return (
     <>
-      {/* Nav */}
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.navLogo}>JURISSO</Link>
-        <ul className={styles.navLinks}>
-          <li><Link href="/fonctionnalites" className={styles.navLink}>Fonctionnalites</Link></li>
-          <li><Link href="/tarifs" className={styles.navLink}>Tarifs</Link></li>
-          <li><Link href="/a-propos" className={styles.navLink}>A propos</Link></li>
-          <li><Link href="/blog" className={styles.navLink}>Blog</Link></li>
-        </ul>
-        <div className={styles.navRight}>
-          <Link href="/auth/connexion" className={styles.navLogin}>Connexion</Link>
-          <Link href="/auth/inscription" className={styles.navCta}>Essai gratuit</Link>
-        </div>
-      </nav>
 
       {/* Layout */}
       <div className={styles.layout}>
