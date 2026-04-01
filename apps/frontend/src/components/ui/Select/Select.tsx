@@ -7,21 +7,25 @@ interface SelectOption {
 }
 interface SelectProps {
   label?: string;
+  name?: string;
   options: SelectOption[];
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
   error?: string;
   disabled?: boolean;
+  required?: boolean;
 }
 export default function Select({
   label,
+  name,
   options,
   value,
   onChange,
   placeholder,
   error,
   disabled,
+  required,
 }: SelectProps) {
   const id = useId();
   const errorId = error ? `${id}-error` : undefined;
@@ -38,10 +42,12 @@ export default function Select({
       <div className={styles.selectWrap}>
         <select
           id={id}
+          name={name}
           className={styles.select}
           value={value}
           onChange={(e) => onChange(e.target.value)}
           disabled={disabled}
+          required={required}
           aria-invalid={error ? true : undefined}
           aria-describedby={errorId}
         >

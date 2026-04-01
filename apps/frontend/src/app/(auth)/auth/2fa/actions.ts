@@ -27,7 +27,7 @@ export async function verify2FAAction(
   }
 
   try {
-    const response = await fetch(`${API_URL}/auth/2fa/verify`, {
+    const response = await fetch(`${API_URL}/api/auth/2fa/verify`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

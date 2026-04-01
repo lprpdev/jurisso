@@ -1,6 +1,6 @@
 'use client';
 import { type ButtonHTMLAttributes, type ReactNode } from 'react';
-import { Spinner } from '@/components/ui/Spinner/Spinner';
+import Spinner from '@/components/ui/Spinner/Spinner';
 import styles from './Button.module.css';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'ghost' | 'danger';

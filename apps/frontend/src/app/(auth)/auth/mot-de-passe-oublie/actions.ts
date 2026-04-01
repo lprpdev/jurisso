@@ -18,7 +18,7 @@ export async function forgotPasswordAction(
   }
 
   try {
-    await fetch(`${API_URL}/auth/forgot-password`, {
+    await fetch(`${API_URL}/api/auth/forgot-password`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),

@@ -65,7 +65,7 @@ export function RegisterForm() {
         options={PROFESSIONS}
         required
         value={profession}
-        onChange={(e) => setProfession(e.target.value)}
+        onChange={(val) => setProfession(val)}
       />
 
       {profession === 'avocat' && (

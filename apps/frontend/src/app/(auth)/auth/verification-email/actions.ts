@@ -8,7 +8,7 @@ export async function resendVerificationEmail(): Promise<{
 }> {
   try {
     const response = await fetch(
-      `${API_URL}/auth/resend-verification`,
+      `${API_URL}/api/auth/resend-verification`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

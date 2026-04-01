@@ -49,7 +49,7 @@ export async function registerAction(
   }
 
   try {
-    const response = await fetch(`${API_URL}/auth/register`, {
+    const response = await fetch(`${API_URL}/api/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -75,5 +75,5 @@ export async function registerAction(
     return { error: 'Impossible de contacter le serveur. Réessayez.' };
   }
 
-  redirect('/verification-email');
+  redirect('/auth/verification-email');
 }
