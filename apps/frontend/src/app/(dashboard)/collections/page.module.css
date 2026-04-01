@@ -13,7 +13,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-3xl);
   font-weight: 800;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   letter-spacing: -0.02em;
 }
 
@@ -25,8 +25,8 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 600;
-  background-color: var(--color-primary, #00193c);
-  color: var(--color-on-primary, #ffffff);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
   border: none;
   border-radius: var(--radius-full, 9999px);
 
@@ -44,11 +44,11 @@
 }
 
 .card {
-  background-color: var(--color-surface-container-lowest, #ffffff);
+  background-color: var(--color-surface-container-lowest);
   padding: var(--space-5);
   display: block;
   text-decoration: none;
-  color: var(--color-on-surface, #1d1c17);
+  color: var(--color-on-surface);
   border-radius: var(--radius-lg, 2rem);
 
   transition: transform 0.2s ease;
@@ -76,13 +76,13 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
 }
 
 .cardDescription {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
   line-height: var(--leading-normal);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -96,7 +96,7 @@
   justify-content: space-between;
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }
 
 .cardActions {
@@ -108,7 +108,7 @@
 .cardAction {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   background: none;
   padding: 0;
   font-weight: 500;
@@ -123,7 +123,7 @@
 }
 
 .cardActionDanger:hover {
-  color: var(--color-on-surface, #1d1c17);
+  color: var(--color-on-surface);
   opacity: 1;
 }
 
@@ -136,14 +136,14 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-2xl);
   font-weight: 800;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   margin-bottom: var(--space-3);
 }
 
 .emptyText {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }
 
 @media (max-width: 1024px) {

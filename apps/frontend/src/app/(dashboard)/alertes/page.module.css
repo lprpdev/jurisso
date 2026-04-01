@@ -13,7 +13,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-3xl);
   font-weight: 800;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   letter-spacing: -0.02em;
 }
 
@@ -25,8 +25,8 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 600;
-  background-color: var(--color-primary, #00193c);
-  color: var(--color-on-primary, #ffffff);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
   border: none;
   border-radius: var(--radius-full, 9999px);
 
@@ -44,7 +44,7 @@
 }
 
 .alertCard {
-  background-color: var(--color-surface-container-lowest, #ffffff);
+  background-color: var(--color-surface-container-lowest);
   padding: var(--space-5);
   display: flex;
   align-items: center;
@@ -66,14 +66,14 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   margin-bottom: var(--space-2);
 }
 
 .alertQuery {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
   margin-bottom: var(--space-2);
 }
 
@@ -82,7 +82,7 @@
   gap: var(--space-4);
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }
 
 .frequencyBadge {
@@ -90,8 +90,8 @@
   font-size: var(--text-xs);
   font-weight: 600;
   padding: var(--space-1) var(--space-3);
-  background-color: var(--color-surface-container-high, #ece8e0);
-  color: var(--color-on-surface-variant, #43474f);
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   border-radius: var(--radius-full, 9999px);
@@ -109,7 +109,7 @@
   position: relative;
   width: 44px;
   height: 24px;
-  background-color: var(--color-surface-container-high, #ece8e0);
+  background-color: var(--color-surface-container-high);
   cursor: pointer;
   transition: background-color 0.15s ease;
   border-radius: var(--radius-full, 9999px);
@@ -128,7 +128,7 @@
 }
 
 .toggle:has(input:checked) {
-  background-color: var(--color-primary, #00193c);
+  background-color: var(--color-primary);
 }
 
 .toggleSlider {
@@ -137,7 +137,7 @@
   left: 3px;
   width: 18px;
   height: 18px;
-  background-color: var(--color-surface-container-lowest, #ffffff);
+  background-color: var(--color-surface-container-lowest);
   border-radius: var(--radius-full, 9999px);
   transition: transform 0.15s ease;
 
@@ -146,7 +146,7 @@
 .actionLink {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
   background: none;
   border-radius: var(--radius-sm, 0.5rem);
   padding: var(--space-1) var(--space-2);
@@ -154,8 +154,8 @@
 }
 
 .actionLink:hover {
-  color: var(--color-on-surface, #1d1c17);
-  background-color: var(--color-surface-container, #f2ede5);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-container);
 }
 
 .deleteBtn {
@@ -169,8 +169,8 @@
 }
 
 .deleteBtn:hover {
-  color: var(--color-on-surface, #1d1c17);
-  background-color: var(--color-surface-container, #f2ede5);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-container);
 }
 
 .emptyState {
@@ -182,12 +182,12 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-2xl);
   font-weight: 800;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   margin-bottom: var(--space-3);
 }
 
 .emptyText {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }

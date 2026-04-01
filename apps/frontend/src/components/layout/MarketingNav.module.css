@@ -1,13 +1,11 @@
 .nav {
-  position: sticky;
-  top: 0;
   z-index: var(--z-sticky, 100);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--space-4) var(--space-8);
   background-color: var(--color-primary);
-  border-radius: 0;
+  border-radius: var(--radius-xl);
 }
 
 .logo {
@@ -136,7 +134,7 @@
   top: calc(100% + var(--space-2));
   right: 0;
   min-width: 13rem;
-  background-color: var(--color-surface-container-lowest);
+  background-color: var(--color-surface-container);
   z-index: var(--z-dropdown, 200);
   padding: var(--space-2) 0;
   border-radius: var(--radius-md);

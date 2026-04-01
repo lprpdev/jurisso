@@ -84,7 +84,7 @@
 /* Results */
 .results {
   padding: 2rem clamp(1.5rem,4vw,4rem) 4rem;
-  background-color: var(--color-surface-container);
+  background-color: var(--color-surface-container-lowest);
 }
 
 .resultsInner {

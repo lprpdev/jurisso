@@ -11,7 +11,7 @@
 }
 
 .skeleton {
-  background-color: var(--color-surface-container-high, #ece8e0);
+  background-color: var(--color-surface-container-high);
   border-radius: var(--radius-md, 1rem);
   animation: pulse 1.5s ease-in-out infinite;
 }

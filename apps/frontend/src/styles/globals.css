@@ -5,55 +5,62 @@
 
 :root {
   /* Atelier palette */
-  --color-background: #fef9f1;
-  --color-surface: #fef9f1;
-  --color-surface-container: #f2ede5;
-  --color-surface-container-low: #f8f3eb;
-  --color-surface-container-high: #ece8e0;
-  --color-surface-container-highest: #e7e2da;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-dim: #ded9d2;
-  --color-surface-bright: #fef9f1;
-  --color-surface-variant: #e7e2da;
+  /* Atelier palette — sable doré / kraft chaud */
+  --color-background: #c9c0ad;          /* L0 — sable doré foncé */
+  --color-surface: #c9c0ad;
+  --color-surface-container: #e4dccb;   /* L1 — kraft clair chaud */
+  --color-surface-container-low: #d9d1c0;
+  --color-surface-container-high: #d0c7b5;
+  --color-surface-container-highest: #c9c0ad;
+  --color-surface-container-lowest: #f2ede2; /* L2 — parchemin chaud */
+  --color-surface-dim: #bfb6a3;
+  --color-surface-bright: #e4dccb;
+  --color-surface-variant: #d0c7b5;
 
-  --color-primary: #00193c;
-  --color-primary-container: #002d62;
+  /* Primary — dark brown-black like reference */
+  --color-primary: #1d1c17;
+  --color-primary-container: #2c2a25;
   --color-on-primary: #ffffff;
-  --color-on-primary-container: #7796d1;
+  --color-on-primary-container: #a09b93;
   --color-primary-fixed: #d7e2ff;
-  --color-primary-fixed-dim: #abc7ff;
-  --color-inverse-primary: #abc7ff;
+  --color-primary-fixed-dim: #4a7cdb;
+  --color-inverse-primary: #4a7cdb;
 
-  --color-secondary: #635d58;
-  --color-secondary-container: #eae1da;
-  --color-secondary-fixed: #eae1da;
-  --color-secondary-fixed-dim: #cdc5be;
+  /* Secondary */
+  --color-secondary: #6b6355;
+  --color-secondary-container: #ddd5c4;
+  --color-secondary-fixed: #ddd5c4;
+  --color-secondary-fixed-dim: #b5ac9a;
   --color-on-secondary: #ffffff;
-  --color-on-secondary-fixed: #1f1b17;
+  --color-on-secondary-fixed: #1d1c17;
 
-  --color-tertiary: #330e00;
-  --color-tertiary-container: #541d02;
-  --color-tertiary-fixed: #ffdbcd;
-  --color-tertiary-fixed-dim: #ffb597;
+  /* Tertiary — blue instead of violet/orange */
+  --color-tertiary: #1a4b8c;
+  --color-tertiary-container: #2a5fa3;
+  --color-tertiary-fixed: #d7e2ff;
+  --color-tertiary-fixed-dim: #4a7cdb;
   --color-on-tertiary: #ffffff;
-  --color-on-tertiary-container: #d4815d;
+  --color-on-tertiary-container: #8bb0e8;
 
+  /* Text */
   --color-on-surface: #1d1c17;
-  --color-on-surface-variant: #43474f;
+  --color-on-surface-variant: #5c5a54;
   --color-on-background: #1d1c17;
   --color-inverse-surface: #32302b;
-  --color-inverse-on-surface: #f5f0e8;
+  --color-inverse-on-surface: #edeae3;
 
-  --color-outline: #747781;
-  --color-outline-variant: #c4c6d1;
-  --color-surface-tint: #3e5e95;
+  /* Outline */
+  --color-outline: #8a8275;
+  --color-outline-variant: #b5ac9a;
+  --color-surface-tint: #4a7cdb;
 
+  /* Status */
   --color-error: #ba1a1a;
   --color-error-container: #ffdad6;
   --color-on-error: #ffffff;
   --color-on-error-container: #93000a;
-  --color-success: #00875a;
-  --color-warning: #b45309;
+  --color-success: #2d7a4f;
+  --color-warning: #8a6520;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -147,13 +154,14 @@ html {
   text-size-adjust: 100%;
   line-height: 1.5;
   font-size: 16px;
+  background-color: var(--color-surface-container);
 }
 
 body {
   font-family: var(--font-manrope), 'Manrope', system-ui, -apple-system, sans-serif;
   font-weight: 400;
   color: var(--color-on-surface);
-  background-color: var(--color-background);
+  background-color: var(--color-surface-container);
   min-height: 100dvh;
   overflow-x: hidden;
 }
@@ -231,19 +239,13 @@ table {
   outline: none;
 }
 
-/* Scrollbar */
+/* Scrollbar — hidden */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--color-outline-variant);
-  border-radius: var(--radius-full);
+html {
+  scrollbar-width: none;
 }
 
 /* Animations */

@@ -33,7 +33,7 @@
 /* Mission */
 .mission {
   padding: 5rem clamp(1.5rem,4vw,4rem);
-  background-color: var(--color-background);
+  background-color: transparent;
 }
 
 .missionInner {
@@ -61,7 +61,7 @@
 /* Values */
 .values {
   padding: 5rem clamp(1.5rem,4vw,4rem);
-  background-color: var(--color-surface-container);
+  background-color: var(--color-surface-container-lowest);
 }
 
 .sectionTitle {
@@ -115,7 +115,7 @@
 /* Team */
 .team {
   padding: 5rem clamp(1.5rem,4vw,4rem);
-  background-color: var(--color-background);
+  background-color: transparent;
 }
 
 .teamGrid {
@@ -137,7 +137,7 @@
 .teamAvatar {
   width: 5rem;
   height: 5rem;
-  background-color: var(--color-surface-container);
+  background-color: var(--color-surface-container-lowest);
   margin: 0 auto 1rem;
   display: flex;
   align-items: center;
@@ -177,7 +177,7 @@
 /* Press */
 .press {
   padding: 5rem clamp(1.5rem,4vw,4rem);
-  background-color: var(--color-surface-container);
+  background-color: var(--color-surface-container-lowest);
 }
 
 .pressLogos {

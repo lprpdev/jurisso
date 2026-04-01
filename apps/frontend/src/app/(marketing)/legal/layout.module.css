@@ -49,7 +49,7 @@
 
 .sidebarLink:hover {
   color: var(--color-on-surface);
-  background-color: var(--color-surface-container);
+  background-color: var(--color-surface-container-lowest);
 }
 
 .sidebarLink::before {

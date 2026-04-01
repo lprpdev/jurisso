@@ -218,7 +218,7 @@
 /* ── Comparison Table ── */
 .comparison {
   padding: 4rem clamp(1.5rem,4vw,4rem);
-  background-color: var(--color-background);
+  background-color: transparent;
 }
 
 .comparisonTitle {
@@ -294,7 +294,7 @@
 /* ── FAQ ── */
 .faq {
   padding: 4rem clamp(1.5rem,4vw,4rem) 6rem;
-  background-color: var(--color-surface-container);
+  background-color: var(--color-surface-container-lowest);
 }
 
 .faqTitle {

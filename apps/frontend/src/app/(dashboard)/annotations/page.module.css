@@ -10,7 +10,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-3xl);
   font-weight: 800;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   letter-spacing: -0.02em;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .annotationCard {
-  background-color: var(--color-surface-container-lowest, #ffffff);
+  background-color: var(--color-surface-container-lowest);
   padding: var(--space-5);
   position: relative;
   border-radius: var(--radius-lg, 2rem);
@@ -50,7 +50,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
   font-weight: 700;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -61,8 +61,8 @@
 .excerpt {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface-variant, #43474f);
-  background-color: var(--color-surface-container, #f2ede5);
+  color: var(--color-on-surface-variant);
+  background-color: var(--color-surface-container);
   padding: var(--space-3);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-3);
@@ -73,7 +73,7 @@
 .noteText {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface, #1d1c17);
+  color: var(--color-on-surface);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-3);
 }
@@ -87,7 +87,7 @@
 .date {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }
 
 .actions {
@@ -98,7 +98,7 @@
 .actionBtn {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   background: none;
   padding: var(--space-1) var(--space-2);
   font-weight: 500;
@@ -107,7 +107,7 @@
 }
 
 .actionBtn:hover {
-  background-color: var(--color-surface-container, #f2ede5);
+  background-color: var(--color-surface-container);
 }
 
 .deleteBtn {
@@ -121,8 +121,8 @@
 }
 
 .deleteBtn:hover {
-  color: var(--color-on-surface, #1d1c17);
-  background-color: var(--color-surface-container, #f2ede5);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-container);
 }
 
 .emptyState {
@@ -134,12 +134,12 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-2xl);
   font-weight: 800;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   margin-bottom: var(--space-3);
 }
 
 .emptyText {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }

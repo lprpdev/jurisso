@@ -63,7 +63,7 @@
 
 .danger {
   background-color: var(--color-error);
-  color: var(--color-on-error, #fff);
+  color: var(--color-on-error);
   border-radius: var(--radius-md);
 }
 

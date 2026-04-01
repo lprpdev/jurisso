@@ -6,7 +6,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-3xl);
   font-weight: 800;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   margin-bottom: var(--space-8);
   letter-spacing: -0.02em;
 }
@@ -19,7 +19,7 @@
 }
 
 .section {
-  background-color: var(--color-surface-container-lowest, #ffffff);
+  background-color: var(--color-surface-container-lowest);
   padding: var(--space-6);
   border-radius: var(--radius-lg, 2rem);
 
@@ -29,7 +29,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xl);
   font-weight: 700;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   margin-bottom: var(--space-5);
 }
 
@@ -37,7 +37,7 @@
   content: '';
   display: block;
   height: 1px;
-  background-color: var(--color-outline-variant, #c4c6d1);
+  background-color: var(--color-outline-variant);
   opacity: 0.3;
   margin-top: var(--space-3);
 }
@@ -64,13 +64,13 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--color-on-surface, #1d1c17);
+  color: var(--color-on-surface);
 }
 
 .readOnlyValue {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
   display: flex;
   align-items: center;
   gap: var(--space-2);
@@ -92,8 +92,8 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 600;
-  background-color: var(--color-primary, #00193c);
-  color: var(--color-on-primary, #ffffff);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
   border: none;
   border-radius: var(--radius-full, 9999px);
 
@@ -106,8 +106,8 @@
 }
 
 .saveBtn:disabled {
-  background-color: var(--color-surface-container-high, #ece8e0);
-  color: var(--color-on-surface-variant, #43474f);
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
   cursor: not-allowed;
 
 }
@@ -131,7 +131,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }
 
 .twoFABtn {
@@ -139,15 +139,15 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 500;
-  background-color: var(--color-surface-container-high, #ece8e0);
-  color: var(--color-on-surface, #1d1c17);
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface);
   border: none;
   border-radius: var(--radius-full, 9999px);
   transition: background-color 0.15s ease;
 }
 
 .twoFABtn:hover {
-  background-color: var(--color-surface-container, #f2ede5);
+  background-color: var(--color-surface-container);
   opacity: 0.8;
 }
 
@@ -163,7 +163,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-lg);
   font-weight: 600;
-  color: var(--color-on-surface, #1d1c17);
+  color: var(--color-on-surface);
 }
 
 .planBadge {
@@ -173,14 +173,14 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   padding: var(--space-1) var(--space-3);
-  background-color: var(--color-surface-container-high, #ece8e0);
-  color: var(--color-on-surface-variant, #43474f);
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
   border-radius: var(--radius-full, 9999px);
 }
 
 .planBadgePro {
-  background-color: var(--color-primary, #00193c);
-  color: var(--color-on-primary, #ffffff);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 .upgradeBtn {
@@ -188,8 +188,8 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 600;
-  background-color: var(--color-primary, #00193c);
-  color: var(--color-on-primary, #ffffff);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
   border: none;
   border-radius: var(--radius-full, 9999px);
 
@@ -203,7 +203,7 @@
 .manageLink {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   font-weight: 600;
 }
 
@@ -229,7 +229,7 @@
 .dangerDescription {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-4);
 }
@@ -240,7 +240,7 @@
   font-size: var(--text-sm);
   font-weight: 600;
   background-color: var(--color-error);
-  color: var(--color-on-primary, #ffffff);
+  color: var(--color-on-primary);
   border: none;
   border-radius: var(--radius-full, 9999px);
   transition: opacity 0.15s ease;

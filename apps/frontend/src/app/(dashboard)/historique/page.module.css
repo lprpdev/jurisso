@@ -13,7 +13,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-3xl);
   font-weight: 800;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   letter-spacing: -0.02em;
 }
 
@@ -29,8 +29,8 @@
 }
 
 .clearAllBtn:hover {
-  color: var(--color-on-surface, #1d1c17);
-  background-color: var(--color-surface-container, #f2ede5);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-container);
 }
 
 .list {
@@ -40,7 +40,7 @@
 }
 
 .historyItem {
-  background-color: var(--color-surface-container-lowest, #ffffff);
+  background-color: var(--color-surface-container-lowest);
   padding: var(--space-4) var(--space-5);
   display: flex;
   align-items: center;
@@ -62,7 +62,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
   font-weight: 500;
-  color: var(--color-on-surface, #1d1c17);
+  color: var(--color-on-surface);
   margin-bottom: var(--space-2);
 }
 
@@ -72,24 +72,24 @@
   gap: var(--space-3);
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }
 
 .filterBadge {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
   padding: var(--space-1) var(--space-3);
-  background-color: var(--color-surface-container-high, #ece8e0);
-  color: var(--color-on-surface-variant, #43474f);
+  background-color: var(--color-surface-container-high);
+  color: var(--color-on-surface-variant);
   border-radius: var(--radius-full, 9999px);
 }
 
 .resultCount {
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }
 
 .historyDate {
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }
 
 .historyActions {
@@ -102,7 +102,7 @@
 .relaunchLink {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   font-weight: 600;
   text-decoration: none;
   padding: var(--space-1) var(--space-2);
@@ -111,13 +111,13 @@
 }
 
 .relaunchLink:hover {
-  background-color: var(--color-surface-container, #f2ede5);
+  background-color: var(--color-surface-container);
 }
 
 .deleteBtn {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
   background: none;
   border-radius: var(--radius-sm, 0.5rem);
   padding: var(--space-1) var(--space-2);
@@ -126,7 +126,7 @@
 
 .deleteBtn:hover {
   color: var(--color-error);
-  background-color: var(--color-surface-container, #f2ede5);
+  background-color: var(--color-surface-container);
 }
 
 .emptyState {
@@ -138,12 +138,12 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-2xl);
   font-weight: 800;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   margin-bottom: var(--space-3);
 }
 
 .emptyText {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }

@@ -62,7 +62,7 @@
   font-family: var(--font-manrope);
   font-size: 0.875rem;
   color: var(--color-on-surface);
-  background-color: var(--color-surface-container);
+  background-color: var(--color-surface-container-lowest);
   padding: 0.75rem 1rem;
   width: 100%;
   border: 1px solid rgba(196, 198, 209, 0.15);
@@ -115,7 +115,7 @@
 
 .sideSection {
   padding: 1.5rem;
-  background-color: var(--color-surface-container);
+  background-color: var(--color-surface-container-lowest);
   border-radius: var(--radius-lg);
 }
 

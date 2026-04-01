@@ -18,7 +18,7 @@
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
   pointer-events: none;
 }
 
@@ -28,19 +28,19 @@
   padding: 0 var(--space-6) 0 var(--space-12);
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-lg);
-  background-color: var(--color-surface-container-lowest, #ffffff);
-  color: var(--color-on-surface, #1d1c17);
+  background-color: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
   border: none;
   border-radius: var(--radius-full, 9999px);
 
 }
 
 .searchInput::placeholder {
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }
 
 .searchInput:focus-visible {
-  outline: 2px solid var(--color-primary, #00193c);
+  outline: 2px solid var(--color-primary);
   outline-offset: -2px;
 }
 
@@ -52,7 +52,7 @@
 
 /* ----- Filter Panel ----- */
 .filterPanel {
-  background-color: var(--color-surface-container-lowest, #ffffff);
+  background-color: var(--color-surface-container-lowest);
   padding: var(--space-5);
   align-self: start;
   position: sticky;
@@ -65,7 +65,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
   font-weight: 700;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   margin-bottom: var(--space-4);
 }
 
@@ -77,7 +77,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--color-on-surface, #1d1c17);
+  color: var(--color-on-surface);
   margin-bottom: var(--space-3);
 }
 
@@ -85,7 +85,7 @@
   content: '';
   display: block;
   height: 1px;
-  background-color: var(--color-outline-variant, #c4c6d1);
+  background-color: var(--color-outline-variant);
   opacity: 0.3;
   margin-top: var(--space-2);
 }
@@ -96,13 +96,13 @@
   gap: var(--space-2);
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
   padding: var(--space-1) 0;
   cursor: pointer;
 }
 
 .filterOption input {
-  accent-color: var(--color-primary, #00193c);
+  accent-color: var(--color-primary);
 }
 
 /* ----- Results Area ----- */
@@ -120,15 +120,15 @@
 .resultsCount {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }
 
 .sortSelect {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface, #1d1c17);
+  color: var(--color-on-surface);
   padding: var(--space-2) var(--space-3);
-  background-color: var(--color-surface-container-lowest, #ffffff);
+  background-color: var(--color-surface-container-lowest);
   border: none;
   border-radius: var(--radius-md, 1rem);
 
@@ -142,11 +142,11 @@
 
 /* ----- Result Card ----- */
 .resultCard {
-  background-color: var(--color-surface-container-lowest, #ffffff);
+  background-color: var(--color-surface-container-lowest);
   padding: var(--space-5);
   display: block;
   text-decoration: none;
-  color: var(--color-on-surface, #1d1c17);
+  color: var(--color-on-surface);
   border-radius: var(--radius-lg, 2rem);
 
   transition: transform 0.2s ease;
@@ -162,7 +162,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   margin-bottom: var(--space-2);
 }
 
@@ -170,7 +170,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-lg);
   font-weight: 700;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   margin-bottom: var(--space-2);
   line-height: var(--leading-snug);
 }
@@ -178,7 +178,7 @@
 .resultExcerpt {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
   line-height: var(--leading-relaxed);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -192,7 +192,7 @@
   gap: var(--space-4);
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-xs);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
 }
 
 /* ----- Pagination ----- */
@@ -212,20 +212,20 @@
   height: 36px;
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
   text-decoration: none;
   border-radius: var(--radius-md, 1rem);
   transition: background-color 0.15s ease;
 }
 
 .pageLink:hover {
-  color: var(--color-on-surface, #1d1c17);
-  background-color: var(--color-surface-container-high, #ece8e0);
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-container-high);
 }
 
 .pageLinkActive {
-  color: var(--color-on-primary, #ffffff);
-  background-color: var(--color-primary, #00193c);
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
   font-weight: 600;
 }
 
@@ -239,14 +239,14 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-2xl);
   font-weight: 800;
-  color: var(--color-primary, #00193c);
+  color: var(--color-primary);
   margin-bottom: var(--space-3);
 }
 
 .emptyText {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-base);
-  color: var(--color-on-surface-variant, #43474f);
+  color: var(--color-on-surface-variant);
   margin-bottom: var(--space-6);
 }
 
@@ -258,7 +258,7 @@
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--color-on-surface, #1d1c17);
+  color: var(--color-on-surface);
   margin-bottom: var(--space-3);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -273,8 +273,8 @@
 .popularTag {
   font-family: var(--font-manrope), 'Manrope', system-ui, sans-serif;
   font-size: var(--text-sm);
-  color: var(--color-primary, #00193c);
-  background-color: var(--color-surface-container-high, #ece8e0);
+  color: var(--color-primary);
+  background-color: var(--color-surface-container-high);
   padding: var(--space-2) var(--space-3);
   text-decoration: none;
   border-radius: var(--radius-full, 9999px);
@@ -282,8 +282,8 @@
 }
 
 .popularTag:hover {
-  background-color: var(--color-primary, #00193c);
-  color: var(--color-on-primary, #ffffff);
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
 }
 
 /* ----- Responsive ----- */

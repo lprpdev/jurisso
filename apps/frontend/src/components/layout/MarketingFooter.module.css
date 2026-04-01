@@ -1,7 +1,7 @@
 .footer {
   background-color: var(--color-primary);
   padding: var(--space-16) var(--space-8) var(--space-8);
-  position: relative;
+  border-radius: var(--radius-xl);
 }
 
 .grid {
