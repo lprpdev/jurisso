@@ -24,21 +24,23 @@ export class AnnotationsService {
     });
   }
 
-  async findAll(userId: string, page: number = 1, limit: number = 20) {
+  async findAll(userId: string, page: number | string = 1, limit: number | string = 20) {
+    const p = typeof page === 'string' ? parseInt(page, 10) || 1 : page;
+    const l = typeof limit === 'string' ? parseInt(limit, 10) || 20 : limit;
     const [annotations, total] = await this.annotationRepo.findAndCount({
       where: { userId },
       relations: ['document'],
       order: { updatedAt: 'DESC' },
-      skip: (page - 1) * limit,
-      take: limit,
+      skip: (p - 1) * l,
+      take: l,
     });
 
     return {
       data: annotations,
       total,
-      page,
-      limit,
-      totalPages: Math.ceil(total / limit),
+      page: p,
+      limit: l,
+      totalPages: Math.ceil(total / l),
     };
   }
 

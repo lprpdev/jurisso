@@ -34,10 +34,10 @@ export class FavoritesController {
   @ApiOperation({ summary: 'List all favorites' })
   async findAll(
     @CurrentUser() user: JwtPayload,
-    @Query('page') page: number = 1,
-    @Query('limit') limit: number = 20,
+    @Query('page') page: string = '1',
+    @Query('limit') limit: string = '20',
   ) {
-    return this.favoritesService.findAll(user.sub, page, limit);
+    return this.favoritesService.findAll(user.sub, parseInt(page, 10) || 1, parseInt(limit, 10) || 20);
   }
 
   @Post()

@@ -58,12 +58,14 @@ export default async function DocumentPage({
   let doc: Document;
   let annotations: Annotation[] = [];
   let related: RelatedDoc[] = [];
+  let isFavorite = false;
 
   try {
-    [doc, annotations, related] = await Promise.all([
+    [doc, annotations, related, isFavorite] = await Promise.all([
       api<Document>(`/api/documents/${id}`),
       api<Annotation[]>(`/api/annotations?documentId=${id}`).catch(() => []),
       api<RelatedDoc[]>(`/api/documents/${id}/related`).catch(() => []),
+      api<boolean>(`/api/favorites/check/${id}`).catch(() => false),
     ]);
   } catch {
     return (
@@ -170,7 +172,7 @@ export default async function DocumentPage({
         <div className={styles.sidePanelSection}>
           <DocumentActions
             documentId={doc.id}
-            isFavorite={false}
+            isFavorite={isFavorite}
           />
         </div>
 

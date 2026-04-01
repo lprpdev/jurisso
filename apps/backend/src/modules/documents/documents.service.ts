@@ -32,7 +32,8 @@ export class DocumentsService {
     return document;
   }
 
-  async findRelated(id: string, limit: number = 10) {
+  async findRelated(id: string, limit: number | string = 10) {
+    const limitNum = typeof limit === 'string' ? parseInt(limit, 10) || 10 : limit;
     const document = await this.findById(id);
 
     const cacheKey = `document:${id}:related:${limit}`;
@@ -56,7 +57,7 @@ export class DocumentsService {
 
     qb.andWhere('doc.id != :id', { id });
     qb.orderBy('doc."dateDecision"', 'DESC', 'NULLS LAST');
-    qb.limit(limit);
+    qb.limit(limitNum);
 
     const related = await qb.getMany();
 

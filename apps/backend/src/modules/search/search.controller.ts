@@ -40,9 +40,9 @@ export class SearchController {
   @ApiOperation({ summary: 'Search suggestions / autocomplete' })
   async suggest(
     @Query('q') query: string,
-    @Query('limit') limit: number = 10,
+    @Query('limit') limit: string = '10',
   ) {
-    return this.searchService.suggest(query, limit);
+    return this.searchService.suggest(query, parseInt(limit, 10) || 10);
   }
 
   @Get('history')
@@ -51,10 +51,10 @@ export class SearchController {
   @ApiOperation({ summary: 'Get search history' })
   async getHistory(
     @CurrentUser() user: JwtPayload,
-    @Query('page') page: number = 1,
-    @Query('limit') limit: number = 20,
+    @Query('page') page: string = '1',
+    @Query('limit') limit: string = '20',
   ) {
-    return this.searchService.getHistory(user.sub, page, limit);
+    return this.searchService.getHistory(user.sub, parseInt(page, 10) || 1, parseInt(limit, 10) || 20);
   }
 
   @Delete('history')

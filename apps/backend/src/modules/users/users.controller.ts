@@ -80,8 +80,8 @@ export class UsersController {
   @Roles('admin', 'super_admin')
   @ApiBearerAuth()
   @ApiOperation({ summary: 'List all users (admin)' })
-  async findAll(@Query('page') page: number = 1, @Query('limit') limit: number = 20) {
-    return this.usersService.findAll(page, limit);
+  async findAll(@Query('page') page: string = '1', @Query('limit') limit: string = '20') {
+    return this.usersService.findAll(parseInt(page, 10) || 1, parseInt(limit, 10) || 20);
   }
 
   @Get(':id')

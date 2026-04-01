@@ -45,9 +45,9 @@ export class DocumentsController {
   @ApiOperation({ summary: 'Get related documents' })
   async findRelated(
     @Param('id') id: string,
-    @Query('limit') limit: number = 10,
+    @Query('limit') limit: string = '10',
   ) {
-    return this.documentsService.findRelated(id, limit);
+    return this.documentsService.findRelated(id, parseInt(limit, 10) || 10);
   }
 
   @Get(':id/export/pdf')

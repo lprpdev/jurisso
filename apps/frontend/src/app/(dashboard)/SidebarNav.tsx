@@ -10,58 +10,7 @@ interface NavItem {
   icon: React.ReactNode;
 }
 
-const MAIN_NAV: NavItem[] = [
-  {
-    href: '/dashboard',
-    label: 'Tableau de bord',
-    icon: (
-      <svg viewBox="0 0 18 18" fill="none" className={styles.navIcon}>
-        <rect x="1" y="1" width="7" height="7" stroke="currentColor" strokeWidth="1.5" />
-        <rect x="10" y="1" width="7" height="7" stroke="currentColor" strokeWidth="1.5" />
-        <rect x="1" y="10" width="7" height="7" stroke="currentColor" strokeWidth="1.5" />
-        <rect x="10" y="10" width="7" height="7" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
-  },
-  {
-    href: '/recherche',
-    label: 'Recherche',
-    icon: (
-      <svg viewBox="0 0 18 18" fill="none" className={styles.navIcon}>
-        <circle cx="8" cy="8" r="5.5" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M12 12L16 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  },
-  {
-    href: '/favoris',
-    label: 'Favoris',
-    icon: (
-      <svg viewBox="0 0 18 18" fill="none" className={styles.navIcon}>
-        <path d="M9 2L11.1 6.3L16 6.9L12.5 10.3L13.3 15.2L9 12.9L4.7 15.2L5.5 10.3L2 6.9L6.9 6.3L9 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-      </svg>
-    ),
-  },
-  {
-    href: '/collections',
-    label: 'Collections',
-    icon: (
-      <svg viewBox="0 0 18 18" fill="none" className={styles.navIcon}>
-        <rect x="2" y="4" width="14" height="12" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M5 4V2H13V4" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
-  },
-  {
-    href: '/alertes',
-    label: 'Alertes',
-    icon: (
-      <svg viewBox="0 0 18 18" fill="none" className={styles.navIcon}>
-        <path d="M9 1.5C5.96 1.5 3.5 3.96 3.5 7V10.5L2 12.5V13.5H16V12.5L14.5 10.5V7C14.5 3.96 12.04 1.5 9 1.5Z" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M7 13.5V14.5C7 15.6 7.9 16.5 9 16.5C10.1 16.5 11 15.6 11 14.5V13.5" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    ),
-  },
+const NAV_ITEMS: NavItem[] = [
   {
     href: '/annotations',
     label: 'Annotations',
@@ -98,7 +47,7 @@ const SECONDARY_NAV: NavItem[] = [
   },
   {
     href: '/parametres',
-    label: 'Paramètres',
+    label: 'Parametres',
     icon: (
       <svg viewBox="0 0 18 18" fill="none" className={styles.navIcon}>
         <circle cx="9" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.5" />
@@ -123,14 +72,13 @@ export function SidebarNav() {
   const pathname = usePathname();
 
   function isActive(href: string) {
-    if (href === '/dashboard') return pathname === '/dashboard';
     return pathname.startsWith(href);
   }
 
   return (
     <>
       <div className={styles.navGroup}>
-        {MAIN_NAV.map((item) => (
+        {NAV_ITEMS.map((item) => (
           <Link
             key={item.href}
             href={item.href}

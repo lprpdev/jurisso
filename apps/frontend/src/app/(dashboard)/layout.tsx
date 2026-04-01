@@ -4,6 +4,7 @@ import { auth } from '@/lib/auth';
 import { SidebarNav } from './SidebarNav';
 import DashboardUserMenu from './DashboardUserMenu';
 import DashboardPillTabs from './DashboardPillTabs';
+import SidebarLogout from './SidebarLogout';
 import styles from './layout.module.css';
 
 export default async function DashboardLayout({
@@ -47,13 +48,32 @@ export default async function DashboardLayout({
         <SidebarNav />
 
         <div className={styles.sidebarFooter}>
-          <Link href="/recherche" className={styles.newSearchBtn}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <line x1="5" y1="12" x2="19" y2="12" />
-            </svg>
-            <span>Nouvelle recherche</span>
-          </Link>
+          {/* Plan Card */}
+          <div className={user.plan === 'free' ? styles.planCard : styles.planCardPro}>
+            <div className={styles.planCardHeader}>
+              <span className={styles.planCardLabel}>
+                {planLabel}
+              </span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+              </svg>
+            </div>
+            {user.plan === 'free' ? (
+              <>
+                <p className={styles.planCardText}>
+                  Passez a Pro pour des recherches illimitees et des alertes intelligentes.
+                </p>
+                <Link href="/tarifs" className={styles.planCardBtn}>
+                  Passer a Pro
+                </Link>
+              </>
+            ) : (
+              <p className={styles.planCardText}>
+                Recherches illimitees, alertes, annotations et export PDF.
+              </p>
+            )}
+          </div>
+
         </div>
       </nav>
 
@@ -61,31 +81,30 @@ export default async function DashboardLayout({
       <main className={styles.mainArea}>
         {/* Floating Header */}
         <header className={styles.header}>
-          <div className={styles.headerLeft}>
-            <DashboardPillTabs />
-          </div>
+          <DashboardPillTabs />
+
+          <form action="/recherche" method="get" className={styles.searchForm}>
+            <div className={styles.searchInputWrapper}>
+              <svg
+                className={styles.searchIcon}
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden="true"
+              >
+                <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M11 11L14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              <input
+                type="search"
+                name="q"
+                className={styles.searchInput}
+                placeholder="Rechercher dans les archives\u2026"
+                autoComplete="off"
+              />
+            </div>
+          </form>
 
           <div className={styles.headerRight}>
-            <form action="/recherche" method="get" className={styles.searchForm}>
-              <div className={styles.searchInputWrapper}>
-                <svg
-                  className={styles.searchIcon}
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5" />
-                  <path d="M11 11L14 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-                <input
-                  type="search"
-                  name="q"
-                  className={styles.searchInput}
-                  placeholder="Rechercher\u2026"
-                  autoComplete="off"
-                />
-              </div>
-            </form>
             <button
               type="button"
               className={styles.notificationBtn}
@@ -104,8 +123,6 @@ export default async function DashboardLayout({
                 />
               </svg>
             </button>
-
-            <span className={styles.planBadge}>{planLabel}</span>
 
             <DashboardUserMenu
               initials={initials}

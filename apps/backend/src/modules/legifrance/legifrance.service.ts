@@ -141,6 +141,24 @@ export class LegifranceService {
     return (await response.json()) as JudilibreResponse;
   }
 
+  /** Get a single decision from Judilibre by ID */
+  async getJudilibreDecision(id: string): Promise<JudilibreResult | null> {
+    const token = await this.getAccessToken();
+
+    const response = await this.rateLimitedFetch(
+      `${this.apiBaseUrl}/cassation/judilibre/v1.0/decision?id=${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          KeyId: this.apiKey,
+        },
+      },
+    );
+
+    if (!response.ok) return null;
+    return (await response.json()) as JudilibreResult;
+  }
+
   /** Sync decisions from Judilibre into local DB */
   async syncDecisions(maxPages = 10): Promise<{ created: number; updated: number }> {
     this.logger.log('Syncing decisions from Judilibre...');
