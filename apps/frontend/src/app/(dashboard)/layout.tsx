@@ -34,15 +34,7 @@ export default async function DashboardLayout({
       {/* ----- Sidebar ----- */}
       <nav className={styles.sidebar} aria-label="Navigation principale">
         <div className={styles.sidebarHeader}>
-          <div className={styles.logoIcon}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-              <path d="M3 21h18M3 7v1a4 4 0 004 4h10a4 4 0 004-4V7M12 12v9" />
-            </svg>
-          </div>
-          <div>
-            <Link href="/dashboard" className={styles.logoText}>JURISSO</Link>
-            <p className={styles.logoSub}>Recherche juridique</p>
-          </div>
+          <Link href="/dashboard" className={styles.logoText}>JURISSO</Link>
         </div>
 
         <SidebarNav />
@@ -79,7 +71,7 @@ export default async function DashboardLayout({
 
       {/* ----- Main Area ----- */}
       <main className={styles.mainArea}>
-        {/* Floating Header */}
+        {/* Header above canvas */}
         <header className={styles.header}>
           <DashboardPillTabs />
 
@@ -134,11 +126,9 @@ export default async function DashboardLayout({
         </header>
 
         {/* Canvas */}
-        <section className={styles.canvas}>
-          <div className={styles.canvasInner}>
-            {children}
-          </div>
-        </section>
+        <div className={styles.canvasInner}>
+          {children}
+        </div>
       </main>
     </div>
   );
