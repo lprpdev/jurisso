@@ -16,6 +16,7 @@ import { AuditModule } from './modules/audit/audit.module';
 import { AppCacheModule } from './modules/cache/cache.module';
 import { EmailModule } from './modules/email/email.module';
 import { LegifranceModule } from './modules/legifrance/legifrance.module';
+import { Document } from './entities/document.entity';
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import { LegifranceModule } from './modules/legifrance/legifrance.module';
       throttlers: [{ ttl: 60000, limit: 100 }],
     }),
     ScheduleModule.forRoot(),
+    TypeOrmModule.forFeature([Document]),
     EmailModule,
     AuthModule,
     UsersModule,

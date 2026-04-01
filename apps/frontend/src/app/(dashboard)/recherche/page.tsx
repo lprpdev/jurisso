@@ -81,7 +81,21 @@ export default async function RecherchePage({
         ...(params.type ? { type: params.type } : {}),
         ...(params.jurisdiction ? { jurisdiction: params.jurisdiction } : {}),
       });
-      data = await api<SearchResponse>(`/search?${searchQuery.toString()}`);
+      const raw = await api<{ data: SearchResult[]; total: number; page: number; totalPages: number }>(`/api/search?${searchQuery.toString()}`);
+      data = {
+        results: raw.data.map((d: any) => ({
+          id: d.id,
+          title: d.title,
+          type: d.type,
+          jurisdiction: d.jurisdiction,
+          date: d.dateDecision || d.datePublication || d.createdAt,
+          number: d.reference || d.numberEcli,
+          excerpt: d.highlight || d.summary || d.content?.substring(0, 200) || '',
+        })),
+        total: raw.total,
+        page: raw.page,
+        totalPages: raw.totalPages,
+      };
     } catch {
       // Render with empty results
     }
